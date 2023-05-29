@@ -93,7 +93,7 @@ function WorkExperienceCard({
   );
 }
 
-export default function Home() {
+export function Page() {
   return (
     <main className="flex min-h-screen px-8 dark:text-slate-300">
       <div className="flex flex-col lg:max-w-6xl lg:flex-row mx-auto my-4 lg:my-12">
@@ -235,12 +235,20 @@ export default function Home() {
                 Visual Studio Code
               </ExternalTextLink>{" "}
               by yours truly, using{" "}
-              <ExternalTextLink href="https://nextjs.org/">
-                Next.js
+              <ExternalTextLink href="https://react.dev/">
+                React
               </ExternalTextLink>{" "}
               &{" "}
               <ExternalTextLink href="https://tailwindcss.com/">
                 Tailwind CSS
+              </ExternalTextLink>{" "}
+              rendered as a static site at build time using{" "}
+              <ExternalTextLink href="https://vitejs.dev/">
+                Vite
+              </ExternalTextLink>{" "}
+              &{" "}
+              <ExternalTextLink href="https://vite-plugin-ssr.com/">
+                vite-plugin-ssr
               </ExternalTextLink>
               . It is deployed and hosted on{" "}
               <ExternalTextLink href="https://pages.github.com/">

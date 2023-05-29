@@ -13,11 +13,12 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "esbenp.prettier-vscode",
-        "svelte.svelte-vscode",
-        "ardenivanov.svelte-intellisense",
-        "streetsidesoftware.code-spell-checker"
-      ]
+		"esbenp.prettier-vscode",
+		"svelte.svelte-vscode",
+		"ardenivanov.svelte-intellisense",
+		"streetsidesoftware.code-spell-checker",
+		"bradlc.vscode-tailwindcss"
+	]
     }
   },
 
