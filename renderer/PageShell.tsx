@@ -1,4 +1,3 @@
-import "inter-ui/inter.css";
 import React from "react";
 import "./PageShell.css";
 import type { PageContext } from "./types";
