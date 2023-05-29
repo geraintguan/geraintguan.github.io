@@ -93,9 +93,9 @@ function WorkExperienceCard({
   );
 }
 
-export const documentProps = {
-  title: "Geraint Guan",
-  description: "Geraint Guan's personal landing page",
+export const meta = {
+  title: "Geraint Guan - Home",
+  description: "Geraint Guan's personal home page",
 };
 
 export function Page() {
@@ -269,7 +269,7 @@ export function Page() {
               </ExternalTextLink>
               . The source code is publicly available at this{" "}
               <ExternalTextLink href="https://github.com/geraintguan/geraintguan.github.io">
-                public GitHub repository
+                GitHub repository
               </ExternalTextLink>
               .
             </p>

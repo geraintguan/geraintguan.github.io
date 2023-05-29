@@ -24,13 +24,11 @@ export async function render(pageContext: PageContextServer) {
   );
 
   // See https://vite-plugin-ssr.com/head
-  const { documentProps } = pageContext.exports;
+  const { meta } = pageContext.exports;
 
-  const title = (documentProps && documentProps.title) || "Vite SSR app";
+  const title = (meta && meta.title) || "Vite SSR app";
 
-  const desc =
-    (documentProps && documentProps.description) ||
-    "App using Vite + vite-plugin-ssr";
+  const desc = (meta && meta.description) || "App using Vite + vite-plugin-ssr";
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">
