@@ -93,6 +93,11 @@ function WorkExperienceCard({
   );
 }
 
+export const documentProps = {
+  title: "Geraint Guan",
+  description: "Geraint Guan's personal landing page",
+};
+
 export function Page() {
   return (
     <main className="flex min-h-screen px-8 dark:text-slate-300">
