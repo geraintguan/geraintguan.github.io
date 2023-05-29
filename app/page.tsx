@@ -1,113 +1,268 @@
-import Image from 'next/image'
+import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  FontAwesomeIcon,
+  FontAwesomeIconProps,
+} from "@fortawesome/react-fontawesome";
+import { format } from "date-fns";
+import { ReactNode } from "react";
+
+export type ExternalIconLinkProps = FontAwesomeIconProps & {
+  ariaLabel: string;
+  href: string;
+};
+
+function ExternalIconLink({
+  ariaLabel,
+  href,
+  ...faProps
+}: ExternalIconLinkProps) {
+  return (
+    <a
+      aria-label={ariaLabel}
+      className="text-slate-400 hover:text-slate-100 focus:text-slate-100 focus:outline-none"
+      href={href}
+      target="_blank"
+    >
+      <FontAwesomeIcon {...faProps} />
+    </a>
+  );
+}
+
+type ExternalTextLinkProps = {
+  children: string;
+  href: string;
+};
+
+function ExternalTextLink({ children, href }: ExternalTextLinkProps) {
+  return (
+    <a
+      className="text-slate-100 font-bold hover:underline"
+      href={href}
+      target="_blank"
+    >
+      {children}
+    </a>
+  );
+}
+
+type WorkExperienceCardProps = {
+  startDate: Date;
+  endDate?: Date;
+  place: string;
+  title: string;
+  description: ReactNode;
+  badges?: string[];
+};
+
+function WorkExperienceCard({
+  startDate,
+  endDate,
+  place,
+  title,
+  description,
+  badges = [],
+}: WorkExperienceCardProps) {
+  const formattedStartDate = format(startDate, "MMM yyyy");
+  const formattedEndDate = endDate ? format(endDate, "MMM yyyy") : "Present";
+
+  return (
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-col lg:flex-row lg:space-x-8">
+        <div className="flex-1 uppercase dark: text-slate-400">
+          {formattedStartDate} — {formattedEndDate}
+        </div>
+        <div className="flex flex-col mt-4 lg:mt-0">
+          <div className="text-lg text-right font-bold dark:text-slate-100">
+            {title}
+          </div>
+          <div className="text-right dark:text-slate-400">{place}</div>
+        </div>
+      </div>
+      <div className="dark:text-slate-300">{description}</div>
+      <div className="flex flex-wrap gap-4">
+        {badges.sort().map((badge, index) => (
+          <div
+            className="text-xs font-bold bg-indigo-900 text-indigo-300 px-3 py-1 rounded-md min-w-fit"
+            key={index}
+          >
+            {badge}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <main className="flex min-h-screen px-8 dark:text-slate-300">
+      <div className="flex flex-col lg:max-w-6xl lg:flex-row mx-auto my-4 lg:my-12">
+        <header className="flex flex-col min-w-fit lg:sticky lg:top-0 lg:max-h-screen lg:py-20">
+          <div className="font-bold text-4xl dark:text-slate-100">
+            Geraint Guan
+          </div>
+          <div className="text-xl py-2">
+            Lead Software Engineer at Appointedd
+          </div>
+          <div className="flex flex-row gap-4 py-4">
+            <ExternalIconLink
+              ariaLabel="Go to my GitHub profile"
+              href="https://github.com/geraintguan"
+              icon={faGithubSquare}
+              size="2x"
             />
-          </a>
+            <ExternalIconLink
+              ariaLabel="Go to my LinkedIn profile"
+              href="https://www.linkedin.com/in/geraintguan/"
+              icon={faLinkedin}
+              size="2x"
+            />
+          </div>
+        </header>
+        <div className="flex flex-col mt-4 lg:mt-0 lg:px-12">
+          <div className="text-xl py-8 font-bold dark:text-slate-100">
+            About
+          </div>
+          <div className="flex flex-col gap-4">
+            <p>
+              Ever since I stumbled across programming and made my first
+              command-line tic-tac-toe game written in C++ when I was 12, I have
+              been enamoured with the art of writing code. After a stint in
+              academia studying Computer Science at the{" "}
+              <ExternalTextLink href="https://www.st-andrews.ac.uk/">
+                University of St Andrews
+              </ExternalTextLink>{" "}
+              I joined{" "}
+              <ExternalTextLink href="https://www.appointedd.com/">
+                Appointedd
+              </ExternalTextLink>{" "}
+              and have the great pleasure of working on a great product with an
+              amazing team of people.
+            </p>
+            <p>
+              I currently split my time between engineering management, product
+              management, operational infrastructure, and programming. I love
+              being able to work on all aspects of a product focused technology
+              business and I am passionate about building both great products
+              and great teams.
+            </p>
+            <p>
+              In my downtime I enjoy messing around with electronics, making
+              music, and playing games (both tabletop and digital).
+            </p>
+          </div>
+          <div className="text-xl py-8 font-bold lg:mt-12 dark:text-slate-100">
+            Experience
+          </div>
+          <div className="flex flex-col gap-8">
+            <WorkExperienceCard
+              startDate={new Date("2020-04-01")}
+              place="Appointedd"
+              title="Lead Software Engineer"
+              description={
+                <p>
+                  Worked as both an engineering manager and a senior independent
+                  contributor. Continued to research and introduce new, modern
+                  technologies such as Storybook, GraphQL, and tRPC to improve
+                  developer productivity and experience. Collaborated with
+                  designers to research and implement a new design system to
+                  improve the consistency and development speed of the UI/UX of
+                  the product.
+                </p>
+              }
+              badges={[
+                "PHP",
+                "JavaScript",
+                "TypeScript",
+                "AWS",
+                "MongoDB",
+                "AngularJS (1.x)",
+                "React",
+                "GraphQL",
+              ]}
+            />
+            <WorkExperienceCard
+              startDate={new Date("2019-01-01")}
+              endDate={new Date("2020-04-01")}
+              place="Appointedd"
+              title="Senior Software Engineer"
+              description={
+                <p>
+                  Worked as a senior independent contributor as well as
+                  contributing to various engineering processes along with
+                  hiring to expand the engineering team. Researched and
+                  introduced new, modern technologies such as React, TypeScript,
+                  and AWS CDK to improve developer productivity and experience.
+                </p>
+              }
+              badges={[
+                "PHP",
+                "JavaScript",
+                "TypeScript",
+                "AWS",
+                "MongoDB",
+                "AngularJS (1.x)",
+                "React",
+                "GraphQL",
+              ]}
+            />
+            <WorkExperienceCard
+              startDate={new Date("2017-01-01")}
+              endDate={new Date("2019-01-01")}
+              place="Appointedd"
+              title="Software Engineer"
+              description={
+                <p>
+                  Worked as an independent contributor in an early-stage
+                  engineering team on significant projects including a new
+                  public REST API and a complete rewrite of the core
+                  availability engine.
+                </p>
+              }
+              badges={[
+                "PHP",
+                "JavaScript",
+                "AWS",
+                "MongoDB",
+                "AngularJS (1.x)",
+              ]}
+            />
+          </div>
+          <div className="flex flex-col py-24">
+            <p className="text-slate-400">
+              This site was created on{" "}
+              <ExternalTextLink href="https://code.visualstudio.com/">
+                Visual Studio Code
+              </ExternalTextLink>{" "}
+              by yours truly, using{" "}
+              <ExternalTextLink href="https://nextjs.org/">
+                Next.js
+              </ExternalTextLink>{" "}
+              &{" "}
+              <ExternalTextLink href="https://tailwindcss.com/">
+                Tailwind CSS
+              </ExternalTextLink>
+              . It is deployed and hosted on{" "}
+              <ExternalTextLink href="https://pages.github.com/">
+                GitHub Pages
+              </ExternalTextLink>
+              . All text uses the{" "}
+              <ExternalTextLink href="https://rsms.me/inter/">
+                Inter
+              </ExternalTextLink>{" "}
+              font family and icons are from{" "}
+              <ExternalTextLink href="https://fontawesome.com/">
+                Font Awesome
+              </ExternalTextLink>
+              . The source code is publicly available at this{" "}
+              <ExternalTextLink href="https://github.com/geraintguan/geraintguan.github.io">
+                public GitHub repository
+              </ExternalTextLink>
+              .
+            </p>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
-  )
+  );
 }
