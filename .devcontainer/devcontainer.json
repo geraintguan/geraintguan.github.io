@@ -2,35 +2,37 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-	"name": "Node.js & TypeScript",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:0-20",
-	"features": {
-		"ghcr.io/devcontainers-contrib/features/pnpm:2": {}
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"esbenp.prettier-vscode",
-				"svelte.svelte-vscode",
-				"ardenivanov.svelte-intellisense",
-				"streetsidesoftware.code-spell-checker"
-			]
-		}
-	}
+  "name": "geraintguan.github.io",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:0-20",
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/pnpm:2": {}
+  },
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "svelte.svelte-vscode",
+        "ardenivanov.svelte-intellisense",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  },
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
 
-	// Configure tool-specific properties.
-	// "customizations": {},
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
 
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "pnpm install"
+
+  // Configure tool-specific properties.
+  // "customizations": {},
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
