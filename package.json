@@ -33,7 +33,7 @@
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4",
     "unplugin-fonts": "1.0.3",
-    "vite": "4.3.2",
+    "vite": "4.3.9",
     "vite-plugin-ssr": "0.4.130"
   }
 }
