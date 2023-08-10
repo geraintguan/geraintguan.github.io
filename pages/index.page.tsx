@@ -165,15 +165,40 @@ export function Page() {
               place="Appointedd"
               title="Lead Software Engineer"
               description={
-                <p>
-                  Worked as both an engineering manager and a senior independent
-                  contributor. Continued to research and introduce new, modern
-                  technologies such as Storybook, GraphQL, and tRPC to improve
-                  developer productivity and experience. Collaborated with
-                  designers to research and implement a new design system to
-                  improve the consistency and development speed of the UI/UX of
-                  the product.
-                </p>
+                <article className="prose dark:prose-invert">
+                  <p>
+                    Worked as both an engineering manager and a senior
+                    independent contributor. Continued to research and introduce
+                    new, modern technologies such as Storybook, GraphQL, and
+                    tRPC to improve developer productivity and experience.
+                    Collaborated with designers to research and implement a new
+                    design system to improve the consistency and development
+                    speed of the UI/UX of the product. My responsibilities in
+                    this role are split between contributing as an engineering
+                    manager and as a
+                  </p>
+                  <p>
+                    As a senior contributor I worked on certain projects
+                    independently with notable examples being:
+                  </p>
+                  <ul>
+                    <li>
+                      <b>Web View Integration</b> - I built the front-end and
+                      back-end of a web view designed to be embedded into one of
+                      our partner's mobile apps. This web view has a subset of
+                      the features of our main app with a user interface
+                      designed to look similar to the partner's user interface.
+                    </li>
+                    <li>
+                      <b>Payment Integration</b> - I built both the front-end
+                      and back-end of the OAuth v2.x part of a payment
+                      integration along with utilities to easily work with the
+                      resulting credentials. The end result was a scalable
+                      framework that could then also be utilised for easily
+                      building other OAuth v2.x integration pieces in our app.
+                    </li>
+                  </ul>
+                </article>
               }
               badges={[
                 "PHP",
@@ -236,8 +261,8 @@ export function Page() {
           <div className="flex flex-col py-24">
             <p className="text-slate-400">
               This site was created on{" "}
-              <ExternalTextLink href="https://code.visualstudio.com/">
-                Visual Studio Code
+              <ExternalTextLink href="https://www.gnu.org/software/emacs/">
+                Emacs
               </ExternalTextLink>{" "}
               by yours truly, using{" "}
               <ExternalTextLink href="https://react.dev/">
