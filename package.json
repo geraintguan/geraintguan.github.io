@@ -18,7 +18,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9",
+    "@tailwindcss/typography": "0.5.9",
     "@types/node": "20.2.1",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
@@ -33,7 +33,7 @@
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4",
     "unplugin-fonts": "1.0.3",
-    "vite": "4.3.2",
+    "vite": "4.4.9",
     "vite-plugin-ssr": "0.4.130"
   }
 }
