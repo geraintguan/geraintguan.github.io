@@ -217,13 +217,16 @@ export function Page() {
               place="Appointedd"
               title="Senior Software Engineer"
               description={
-                <p>
-                  Worked as a senior independent contributor as well as
-                  contributing to various engineering processes along with
-                  hiring to expand the engineering team. Researched and
-                  introduced new, modern technologies such as React, TypeScript,
-                  and AWS CDK to improve developer productivity and experience.
-                </p>
+                <article className="prose dark:prose-invert">
+                  <p>
+                    Worked as a senior independent contributor as well as
+                    contributing to various engineering processes along with
+                    hiring to expand the engineering team. Researched and
+                    introduced new, modern technologies such as React,
+                    TypeScript, and AWS CDK to improve developer productivity
+                    and experience.
+                  </p>
+                </article>
               }
               badges={[
                 "PHP",
@@ -242,12 +245,14 @@ export function Page() {
               place="Appointedd"
               title="Software Engineer"
               description={
-                <p>
-                  Worked as an independent contributor in an early-stage
-                  engineering team on significant projects including a new
-                  public REST API and a complete rewrite of the core
-                  availability engine.
-                </p>
+                <article className="prose dark:prose-invert">
+                  <p>
+                    Worked as an independent contributor in an early-stage
+                    engineering team on significant projects including a new
+                    public REST API and a complete rewrite of the core
+                    availability engine.
+                  </p>
+                </article>
               }
               badges={[
                 "PHP",
