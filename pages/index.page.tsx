@@ -173,9 +173,7 @@ export function Page() {
                     tRPC to improve developer productivity and experience.
                     Collaborated with designers to research and implement a new
                     design system to improve the consistency and development
-                    speed of the UI/UX of the product. My responsibilities in
-                    this role are split between contributing as an engineering
-                    manager and as a
+                    speed of the UI/UX of the product.
                   </p>
                   <p>
                     As a senior contributor I worked on certain projects
