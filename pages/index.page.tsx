@@ -161,7 +161,36 @@ export function Page() {
           </div>
           <div className="flex flex-col gap-8">
             <WorkExperienceCard
+              startDate={new Date("2023-10-01")}
+              place="Appointedd"
+              title="Head of Developer Operations"
+              description={
+                <article className="prose dark:prose-invert">
+                  <p>
+                    Working as both an engineering manager and a senior
+                    independent contributor in a newly created department
+                    planned and executed by myself with the aid of senior
+                    leaders in the company.
+                  </p>
+                </article>
+              }
+              badges={[
+                "PHP",
+                "JavaScript",
+                "TypeScript",
+                "AWS",
+                "MongoDB",
+                "AngularJS (1.x)",
+                "React",
+                "GraphQL",
+                "tRPC",
+                "OpenAPI",
+                "Node.js",
+              ]}
+            />
+            <WorkExperienceCard
               startDate={new Date("2020-04-01")}
+              endDate={new Date("2023-10-01")}
               place="Appointedd"
               title="Lead Software Engineer"
               description={
@@ -207,6 +236,9 @@ export function Page() {
                 "AngularJS (1.x)",
                 "React",
                 "GraphQL",
+                "tRPC",
+                "OpenAPI",
+                "Node.js",
               ]}
             />
             <WorkExperienceCard
@@ -235,6 +267,7 @@ export function Page() {
                 "AngularJS (1.x)",
                 "React",
                 "GraphQL",
+                "Node.js",
               ]}
             />
             <WorkExperienceCard
@@ -258,6 +291,7 @@ export function Page() {
                 "AWS",
                 "MongoDB",
                 "AngularJS (1.x)",
+                "Node.js",
               ]}
             />
           </div>
