@@ -68,17 +68,17 @@ function WorkExperienceCard({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col lg:flex-row lg:space-x-8">
-        <div className="flex-1 uppercase dark: text-slate-400">
+        <div className="flex-1 uppercase text-slate-400">
           {formattedStartDate} — {formattedEndDate}
         </div>
         <div className="flex flex-col mt-4 lg:mt-0">
-          <div className="text-lg text-right font-bold dark:text-slate-100">
+          <div className="text-lg text-right font-bold text-slate-100">
             {title}
           </div>
-          <div className="text-right dark:text-slate-400">{place}</div>
+          <div className="text-right text-slate-400">{place}</div>
         </div>
       </div>
-      <div className="dark:text-slate-300">{description}</div>
+      <div className="text-slate-300">{description}</div>
       <div className="flex flex-wrap gap-4">
         {badges.sort().map((badge, index) => (
           <div
@@ -100,12 +100,10 @@ export const meta = {
 
 export function Page() {
   return (
-    <main className="flex min-h-screen px-8 dark:text-slate-300">
+    <main className="flex min-h-screen px-8 text-slate-300">
       <div className="flex flex-col lg:max-w-6xl lg:flex-row mx-auto my-4 lg:my-12">
         <header className="flex flex-col min-w-fit lg:sticky lg:top-0 lg:max-h-screen lg:py-20">
-          <div className="font-bold text-4xl dark:text-slate-100">
-            Geraint Guan
-          </div>
+          <div className="font-bold text-4xl text-slate-100">Geraint Guan</div>
           <div className="text-xl py-2">
             Lead Software Engineer at Appointedd
           </div>
@@ -125,9 +123,7 @@ export function Page() {
           </div>
         </header>
         <div className="flex flex-col mt-4 lg:mt-0 lg:px-12">
-          <div className="text-xl py-8 font-bold dark:text-slate-100">
-            About
-          </div>
+          <div className="text-xl py-8 font-bold text-slate-100">About</div>
           <div className="flex flex-col gap-4">
             <p>
               Ever since I stumbled across programming and made my first
@@ -156,7 +152,7 @@ export function Page() {
               music, and playing games (both tabletop and digital).
             </p>
           </div>
-          <div className="text-xl py-8 font-bold lg:mt-12 dark:text-slate-100">
+          <div className="text-xl py-8 font-bold lg:mt-12 text-slate-100">
             Experience
           </div>
           <div className="flex flex-col gap-8">
@@ -165,7 +161,7 @@ export function Page() {
               place="Appointedd"
               title="Head of Developer Operations"
               description={
-                <article className="prose dark:prose-invert">
+                <article className="prose prose-invert">
                   <p>
                     Working as both an engineering manager and a senior
                     independent contributor in a newly created department
@@ -194,7 +190,7 @@ export function Page() {
               place="Appointedd"
               title="Lead Software Engineer"
               description={
-                <article className="prose dark:prose-invert">
+                <article className="prose prose-invert">
                   <p>
                     Worked as both an engineering manager and a senior
                     independent contributor. Continued to research and introduce
@@ -247,7 +243,7 @@ export function Page() {
               place="Appointedd"
               title="Senior Software Engineer"
               description={
-                <article className="prose dark:prose-invert">
+                <article className="prose prose-invert">
                   <p>
                     Worked as a senior independent contributor as well as
                     contributing to various engineering processes along with
@@ -276,7 +272,7 @@ export function Page() {
               place="Appointedd"
               title="Software Engineer"
               description={
-                <article className="prose dark:prose-invert">
+                <article className="prose prose-invert">
                   <p>
                     Worked as an independent contributor in an early-stage
                     engineering team on significant projects including a new
@@ -298,8 +294,8 @@ export function Page() {
           <div className="flex flex-col py-24">
             <p className="text-slate-400">
               This site was created on{" "}
-              <ExternalTextLink href="https://www.gnu.org/software/emacs/">
-                Emacs
+              <ExternalTextLink href="https://code.visualstudio.com">
+                VS Code
               </ExternalTextLink>{" "}
               by yours truly, using{" "}
               <ExternalTextLink href="https://react.dev/">
