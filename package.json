@@ -33,7 +33,7 @@
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4",
     "unplugin-fonts": "1.0.3",
-    "vite": "4.4.9",
+    "vite": "4.4.12",
     "vite-plugin-ssr": "0.4.130"
   },
   "pnpm": {
