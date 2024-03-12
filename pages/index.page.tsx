@@ -105,7 +105,7 @@ export function Page() {
         <header className="flex flex-col min-w-fit lg:sticky lg:top-0 lg:max-h-screen lg:py-20">
           <div className="font-bold text-4xl text-slate-100">Geraint Guan</div>
           <div className="text-xl py-2">
-            Lead Software Engineer at Appointedd
+            Head of Developer Operations at Appointedd
           </div>
           <div className="flex flex-row gap-4 py-4">
             <ExternalIconLink
