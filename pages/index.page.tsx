@@ -1,97 +1,7 @@
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import {
-  FontAwesomeIcon,
-  FontAwesomeIconProps,
-} from "@fortawesome/react-fontawesome";
-import { format } from "date-fns";
-import { ReactNode } from "react";
-
-export type ExternalIconLinkProps = FontAwesomeIconProps & {
-  ariaLabel: string;
-  href: string;
-};
-
-function ExternalIconLink({
-  ariaLabel,
-  href,
-  ...faProps
-}: ExternalIconLinkProps) {
-  return (
-    <a
-      aria-label={ariaLabel}
-      className="text-slate-400 hover:text-slate-100 focus:text-slate-100 focus:outline-none"
-      href={href}
-      target="_blank"
-    >
-      <FontAwesomeIcon {...faProps} />
-    </a>
-  );
-}
-
-type ExternalTextLinkProps = {
-  children: string;
-  href: string;
-};
-
-function ExternalTextLink({ children, href }: ExternalTextLinkProps) {
-  return (
-    <a
-      className="text-slate-100 font-bold hover:underline"
-      href={href}
-      target="_blank"
-    >
-      {children}
-    </a>
-  );
-}
-
-type WorkExperienceCardProps = {
-  startDate: Date;
-  endDate?: Date;
-  place: string;
-  title: string;
-  description: ReactNode;
-  badges?: string[];
-};
-
-function WorkExperienceCard({
-  startDate,
-  endDate,
-  place,
-  title,
-  description,
-  badges = [],
-}: WorkExperienceCardProps) {
-  const formattedStartDate = format(startDate, "MMM yyyy");
-  const formattedEndDate = endDate ? format(endDate, "MMM yyyy") : "Present";
-
-  return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-col lg:flex-row lg:space-x-8">
-        <div className="flex-1 uppercase text-slate-400">
-          {formattedStartDate} — {formattedEndDate}
-        </div>
-        <div className="flex flex-col mt-4 lg:mt-0">
-          <div className="text-lg text-right font-bold text-slate-100">
-            {title}
-          </div>
-          <div className="text-right text-slate-400">{place}</div>
-        </div>
-      </div>
-      <div className="text-slate-300">{description}</div>
-      <div className="flex flex-wrap gap-4">
-        {badges.sort().map((badge, index) => (
-          <div
-            className="text-xs font-bold bg-indigo-900 text-indigo-300 px-3 py-1 rounded-md min-w-fit"
-            key={index}
-          >
-            {badge}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+import { ExternalIconLink } from "../components/ExternalIconLink";
+import { ExternalTextLink } from "../components/ExternalTextLink";
+import { WorkExperienceCard } from "../components/WorkExperienceCard";
 
 export const meta = {
   title: "Geraint Guan - Home",
@@ -101,10 +11,10 @@ export const meta = {
 export function Page() {
   return (
     <main className="flex min-h-screen px-8 text-slate-300">
-      <div className="flex flex-col lg:max-w-6xl lg:flex-row mx-auto my-4 lg:my-12">
-        <header className="flex flex-col min-w-fit lg:sticky lg:top-0 lg:max-h-screen lg:py-20">
-          <div className="font-bold text-4xl text-slate-100">Geraint Guan</div>
-          <div className="text-xl py-2">
+      <div className="mx-auto my-4 flex flex-col lg:my-12 lg:max-w-6xl lg:flex-row">
+        <header className="flex min-w-fit flex-col lg:sticky lg:top-0 lg:max-h-screen lg:py-20">
+          <div className="text-4xl font-bold text-slate-100">Geraint Guan</div>
+          <div className="py-2 text-xl">
             Head of Developer Operations at Appointedd
           </div>
           <div className="flex flex-row gap-4 py-4">
@@ -122,8 +32,8 @@ export function Page() {
             />
           </div>
         </header>
-        <div className="flex flex-col mt-4 lg:mt-0 lg:px-12">
-          <div className="text-xl py-8 font-bold text-slate-100">About</div>
+        <div className="mt-4 flex flex-col lg:mt-0 lg:px-12">
+          <div className="py-8 text-xl font-bold text-slate-100">About</div>
           <div className="flex flex-col gap-4">
             <p>
               Ever since I stumbled across programming and made my first
@@ -152,24 +62,11 @@ export function Page() {
               music, and playing games (both tabletop and digital).
             </p>
           </div>
-          <div className="text-xl py-8 font-bold lg:mt-12 text-slate-100">
+          <div className="py-8 text-xl font-bold text-slate-100 lg:mt-12">
             Experience
           </div>
           <div className="flex flex-col gap-8">
             <WorkExperienceCard
-              startDate={new Date("2023-10-01")}
-              place="Appointedd"
-              title="Head of Developer Operations"
-              description={
-                <article className="prose prose-invert">
-                  <p>
-                    Working as both an engineering manager and a senior
-                    independent contributor in a newly created department
-                    planned and executed by myself with the aid of senior
-                    leaders in the company.
-                  </p>
-                </article>
-              }
               badges={[
                 "PHP",
                 "JavaScript",
@@ -183,12 +80,34 @@ export function Page() {
                 "OpenAPI",
                 "Node.js",
               ]}
+              description={
+                <article className="prose prose-invert">
+                  <p>
+                    Working as both an engineering manager and a senior
+                    independent contributor in a newly created department
+                    planned and executed by myself with the aid of senior
+                    leaders in the company.
+                  </p>
+                </article>
+              }
+              place="Appointedd"
+              startDate={new Date("2023-10-01")}
+              title="Head of Developer Operations"
             />
             <WorkExperienceCard
-              startDate={new Date("2020-04-01")}
-              endDate={new Date("2023-10-01")}
-              place="Appointedd"
-              title="Lead Software Engineer"
+              badges={[
+                "PHP",
+                "JavaScript",
+                "TypeScript",
+                "AWS",
+                "MongoDB",
+                "AngularJS (1.x)",
+                "React",
+                "GraphQL",
+                "tRPC",
+                "OpenAPI",
+                "Node.js",
+              ]}
               description={
                 <article className="prose prose-invert">
                   <p>
@@ -208,9 +127,10 @@ export function Page() {
                     <li>
                       <b>Web View Integration</b> - I built the front-end and
                       back-end of a web view designed to be embedded into one of
-                      our partner's mobile apps. This web view has a subset of
-                      the features of our main app with a user interface
-                      designed to look similar to the partner's user interface.
+                      our partner&apos;s mobile apps. This web view has a subset
+                      of the features of our main app with a user interface
+                      designed to look similar to the partner&apos;s user
+                      interface.
                     </li>
                     <li>
                       <b>Payment Integration</b> - I built both the front-end
@@ -223,6 +143,12 @@ export function Page() {
                   </ul>
                 </article>
               }
+              endDate={new Date("2023-10-01")}
+              place="Appointedd"
+              startDate={new Date("2020-04-01")}
+              title="Lead Software Engineer"
+            />
+            <WorkExperienceCard
               badges={[
                 "PHP",
                 "JavaScript",
@@ -232,16 +158,8 @@ export function Page() {
                 "AngularJS (1.x)",
                 "React",
                 "GraphQL",
-                "tRPC",
-                "OpenAPI",
                 "Node.js",
               ]}
-            />
-            <WorkExperienceCard
-              startDate={new Date("2019-01-01")}
-              endDate={new Date("2020-04-01")}
-              place="Appointedd"
-              title="Senior Software Engineer"
               description={
                 <article className="prose prose-invert">
                   <p>
@@ -254,23 +172,20 @@ export function Page() {
                   </p>
                 </article>
               }
+              endDate={new Date("2020-04-01")}
+              place="Appointedd"
+              startDate={new Date("2019-01-01")}
+              title="Senior Software Engineer"
+            />
+            <WorkExperienceCard
               badges={[
                 "PHP",
                 "JavaScript",
-                "TypeScript",
                 "AWS",
                 "MongoDB",
                 "AngularJS (1.x)",
-                "React",
-                "GraphQL",
                 "Node.js",
               ]}
-            />
-            <WorkExperienceCard
-              startDate={new Date("2017-01-01")}
-              endDate={new Date("2019-01-01")}
-              place="Appointedd"
-              title="Software Engineer"
               description={
                 <article className="prose prose-invert">
                   <p>
@@ -281,14 +196,10 @@ export function Page() {
                   </p>
                 </article>
               }
-              badges={[
-                "PHP",
-                "JavaScript",
-                "AWS",
-                "MongoDB",
-                "AngularJS (1.x)",
-                "Node.js",
-              ]}
+              endDate={new Date("2019-01-01")}
+              place="Appointedd"
+              startDate={new Date("2017-01-01")}
+              title="Software Engineer"
             />
           </div>
           <div className="flex flex-col py-24">
