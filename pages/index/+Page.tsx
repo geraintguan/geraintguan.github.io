@@ -94,25 +94,20 @@ export default function Page() {
                 improve the consistency and development speed of the UI/UX of
                 the product.
               </p>
-              <p>
-                As a senior contributor I worked on certain projects
-                independently with notable examples being:
-              </p>
+              <p className="font-bold text-slate-100">Notable Achievements</p>
               <ul>
                 <li>
-                  <b>Web View Integration</b> - I built the front-end and
-                  back-end of a web view designed to be embedded into one of our
-                  partner&apos;s mobile apps. This web view has a subset of the
-                  features of our main app with a user interface designed to
-                  look similar to the partner&apos;s user interface.
+                  Built a full-stack embedded web view integration for one of
+                  our key partner&apos;s mobile apps.
                 </li>
                 <li>
-                  <b>Payment Integration</b> - I built both the front-end and
-                  back-end of the OAuth v2.x part of a payment integration along
-                  with utilities to easily work with the resulting credentials.
-                  The end result was a scalable framework that could then also
-                  be utilised for easily building other OAuth v2.x integration
-                  pieces in our app.
+                  Provided technical support and handled the migration of data
+                  for a key client with a tight deadline for going live.
+                </li>
+                <li>
+                  Built a scalable OAuth V2 internal library for external
+                  integrations that can be easily extended and utilised by any
+                  of our integrations that used OAuth V2.
                 </li>
               </ul>
             </article>
@@ -139,10 +134,25 @@ export default function Page() {
               <p>
                 Worked as a senior independent contributor as well as
                 contributing to various engineering processes along with hiring
-                to expand the engineering team. Researched and introduced new,
-                modern technologies such as React, TypeScript, and AWS CDK to
-                improve developer productivity and experience.
+                to expand the engineering team.
               </p>
+              <p className="font-bold text-slate-100">Notable Achievements</p>
+              <ul>
+                <li>
+                  Introduced and implemented Infrastructure-as-Code using AWS
+                  Cloud Development Kit (CDK) into our stack.
+                </li>
+                <li>
+                  Introduced and and implemented React into our stack in a
+                  progressive manner, allowing us to utilise React components in
+                  our legacy Angular UI so we could incrementally migrate our UI
+                  to React.
+                </li>
+                <li>
+                  Expanded the minimal usage of TypeScript and helped widespread
+                  adoption of it in new code.
+                </li>
+              </ul>
             </article>
           }
           endDate={new Date("2020-04-01")}
