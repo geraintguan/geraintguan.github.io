@@ -9,7 +9,7 @@ export default function Page() {
         <p>
           Ever since I stumbled across programming and wrote my first
           application, a tic-tac-toe game with a command-line interface written
-          in C++, when I was 12 I have been enamoured with the art of writing
+          in C++, when I was 12 I have been enamoured with building stuff with
           code. After a stint in academia studying Computer Science at the{" "}
           <ExternalTextLink href="https://www.st-andrews.ac.uk/">
             University of St Andrews
@@ -22,11 +22,20 @@ export default function Page() {
           amazing team of people.
         </p>
         <p>
-          I currently split my time between engineering management, product
-          management, operational infrastructure, and programming. I love being
-          able to work on all aspects of a product focused technology business
-          and I am passionate about building both great products and great
-          teams.
+          In my current role I spearheaded the creation of a new department
+          aimed at improving our developer experience and productivity, building
+          out our API and Webhooks functionality, and supporting the wider
+          business in our growth aims with technical expertise.
+        </p>
+        <p>
+          I am extremely passionate about building great products, businesses,
+          and teams with technology, as well as science and technology in
+          broader society in general. Please feel free to reach out if you are
+          interested in a potential collaboration or just want to chat about
+          these topics. I am always happy to meet new people, learn about their
+          work, and help out in any way I can (although I am{" "}
+          <b className="font-bold">not</b> currently looking for another
+          full-time role at the moment).
         </p>
       </div>
       <div className="py-8 text-xl font-bold text-slate-100 lg:mt-12">
