@@ -1,7 +1,11 @@
-import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { ExternalIconLink } from "#root/components/ExternalIconLink";
 import { ExternalTextLink } from "#root/components/ExternalTextLink";
 import { WorkExperienceCard } from "#root/components/WorkExperienceCard";
+import {
+  faGithubSquare,
+  faLinkedin,
+  faSquareInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Page() {
   return (
@@ -23,6 +27,12 @@ export default function Page() {
               ariaLabel="Go to my LinkedIn profile"
               href="https://www.linkedin.com/in/geraintguan/"
               icon={faLinkedin}
+              size="2x"
+            />
+            <ExternalIconLink
+              ariaLabel="Go to my Instagram profile"
+              href="https://www.instagram.com/gggeraint/"
+              icon={faSquareInstagram}
               size="2x"
             />
           </div>
