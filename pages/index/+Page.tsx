@@ -5,7 +5,7 @@ import { WorkExperienceCard } from "#root/components/WorkExperienceCard";
 
 export default function Page() {
   return (
-    <main className="flex min-h-screen px-8 text-slate-300">
+    <main className="mx-auto flex min-h-screen px-8 text-slate-300">
       <div className="mx-auto my-4 flex flex-col lg:my-12 lg:max-w-6xl lg:flex-row">
         <header className="flex min-w-fit flex-col lg:sticky lg:top-0 lg:max-h-screen lg:py-20">
           <div className="text-4xl font-bold text-slate-100">Geraint Guan</div>

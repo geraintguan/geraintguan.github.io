@@ -6,7 +6,5 @@ export type LayoutDefaultProps = {
 };
 
 export default function LayoutDefault({ children }: LayoutDefaultProps) {
-  return (
-    <div className="flex min-h-screen px-8 text-slate-300">{children}</div>
-  );
+  return <div className="flex min-h-screen text-slate-300">{children}</div>;
 }
