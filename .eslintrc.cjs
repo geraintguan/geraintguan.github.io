@@ -27,7 +27,7 @@ module.exports = {
 
       parserOptions: {
         ecmaVersion: "latest",
-        project: join(__dirname, "tsconfig.json"),
+        project: join(__dirname, "tsconfig.node.json"),
         sourceType: "module",
       },
 
@@ -37,11 +37,17 @@ module.exports = {
 
       overrides: [
         {
-          files: ["**/*.tsx"],
+          files: ["pages/**/*.ts", "**/*.tsx"],
 
           env: {
             browser: true,
             node: false,
+          },
+
+          parserOptions: {
+            ecmaVersion: "latest",
+            project: join(__dirname, "tsconfig.json"),
+            sourceType: "module",
           },
 
           extends: [

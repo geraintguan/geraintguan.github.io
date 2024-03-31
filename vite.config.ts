@@ -1,7 +1,7 @@
 import react from "@vitejs/plugin-react-swc";
 import fonts from "unplugin-fonts/vite";
+import ssr from "vike/plugin";
 import { defineConfig } from "vite";
-import ssr from "vite-plugin-ssr/plugin";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,4 +14,9 @@ export default defineConfig({
     }),
     ssr({ prerender: true }),
   ],
+  resolve: {
+    alias: {
+      "#root": __dirname,
+    },
+  },
 });

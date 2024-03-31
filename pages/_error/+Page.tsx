@@ -1,4 +1,8 @@
-export function Page({ is404 }: { is404: boolean }) {
+import { usePageContext } from "vike-react/usePageContext";
+
+export default function Page() {
+  const { is404 } = usePageContext();
+
   if (is404) {
     return (
       <>
@@ -9,7 +13,7 @@ export function Page({ is404 }: { is404: boolean }) {
   } else {
     return (
       <>
-        <h1>500 Internal Error</h1>
+        <h1>500 Internal Server Error</h1>
         <p>Something went wrong.</p>
       </>
     );

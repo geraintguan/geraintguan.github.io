@@ -1,14 +1,9 @@
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { ExternalIconLink } from "../components/ExternalIconLink";
-import { ExternalTextLink } from "../components/ExternalTextLink";
-import { WorkExperienceCard } from "../components/WorkExperienceCard";
+import { ExternalIconLink } from "#root/components/ExternalIconLink";
+import { ExternalTextLink } from "#root/components/ExternalTextLink";
+import { WorkExperienceCard } from "#root/components/WorkExperienceCard";
 
-export const meta = {
-  title: "Geraint Guan - Home",
-  description: "Geraint Guan's personal home page",
-};
-
-export function Page() {
+export default function Page() {
   return (
     <main className="flex min-h-screen px-8 text-slate-300">
       <div className="mx-auto my-4 flex flex-col lg:my-12 lg:max-w-6xl lg:flex-row">
@@ -221,9 +216,7 @@ export function Page() {
                 Vite
               </ExternalTextLink>{" "}
               &{" "}
-              <ExternalTextLink href="https://vite-plugin-ssr.com/">
-                vite-plugin-ssr
-              </ExternalTextLink>
+              <ExternalTextLink href="https://vike.dev/">Vike</ExternalTextLink>
               . It is deployed and hosted on{" "}
               <ExternalTextLink href="https://pages.github.com/">
                 GitHub Pages
