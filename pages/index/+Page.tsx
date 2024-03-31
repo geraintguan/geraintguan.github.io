@@ -31,10 +31,11 @@ export default function Page() {
           <div className="py-8 text-xl font-bold text-slate-100">About</div>
           <div className="flex flex-col gap-4">
             <p>
-              Ever since I stumbled across programming and made my first
-              command-line tic-tac-toe game written in C++ when I was 12, I have
-              been enamoured with the art of writing code. After a stint in
-              academia studying Computer Science at the{" "}
+              Ever since I stumbled across programming and wrote my first
+              application, a tic-tac-toe game with a command-line interface
+              written in C++, when I was 12 I have been enamoured with the art
+              of writing code. After a stint in academia studying Computer
+              Science at the{" "}
               <ExternalTextLink href="https://www.st-andrews.ac.uk/">
                 University of St Andrews
               </ExternalTextLink>{" "}
@@ -51,10 +52,6 @@ export default function Page() {
               being able to work on all aspects of a product focused technology
               business and I am passionate about building both great products
               and great teams.
-            </p>
-            <p>
-              In my downtime I enjoy messing around with electronics, making
-              music, and playing games (both tabletop and digital).
             </p>
           </div>
           <div className="py-8 text-xl font-bold text-slate-100 lg:mt-12">
