@@ -105,9 +105,10 @@ export default function Page() {
                   for a key client with a tight deadline for going live.
                 </li>
                 <li>
-                  Built a scalable OAuth V2 internal library for external
+                  Built a scalable OAuth 2.0 internal library for external
                   integrations that can be easily extended and utilised by any
-                  of our integrations that used OAuth V2.
+                  of our integrations that used OAuth 2.0 for authentication and
+                  authorisation.
                 </li>
               </ul>
             </article>
