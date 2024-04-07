@@ -25,7 +25,7 @@ export default function Page() {
           I&apos;m interested in all things science, technology, and business
           (especially start-ups and scale-ups). If you&apos;re interested in
           connecting with me or are looking for some technical advice, feel free
-          to reach out to me on my socials or via email.
+          to reach out!
         </p>
       </div>
       <div className="py-8 text-xl font-bold text-slate-100 lg:mt-12">
