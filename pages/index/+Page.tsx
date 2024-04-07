@@ -4,13 +4,12 @@ import { WorkExperienceCard } from "#root/components/WorkExperienceCard";
 export default function Page() {
   return (
     <>
-      <div className="py-8 text-xl font-bold text-slate-100">About</div>
+      <div className="py-8 text-xl font-bold text-slate-100">About Me</div>
       <div className="flex flex-col gap-4">
         <p>
-          Ever since I stumbled across programming and wrote my first
-          application, a tic-tac-toe game with a command-line interface written
-          in C++, when I was 12 I have been enamoured with building stuff with
-          code. After a stint in academia studying Computer Science at the{" "}
+          Hi, I&apos;m Geraint! 👋 I&apos;ve been enamoured with technology and
+          programming since a young age. After a stint in academia studying as
+          an undergraduate in Computer Science at the{" "}
           <ExternalTextLink href="https://www.st-andrews.ac.uk/">
             University of St Andrews
           </ExternalTextLink>{" "}
@@ -18,24 +17,15 @@ export default function Page() {
           <ExternalTextLink href="https://www.appointedd.com/">
             Appointedd
           </ExternalTextLink>{" "}
-          and have the great pleasure of working on a great product with an
-          amazing team of people.
+          where I have the great pleasure of growing with a very early stage
+          start-up at the start of my professional career with an amazing team
+          of people.
         </p>
         <p>
-          In my current role I spearheaded the creation of a new department
-          aimed at improving our developer experience and productivity, building
-          out our API and Webhooks functionality, and supporting the wider
-          business in our growth aims with technical expertise.
-        </p>
-        <p>
-          I am extremely passionate about building great products, businesses,
-          and teams with technology, as well as science and technology in
-          broader society in general. Please feel free to reach out if you are
-          interested in a potential collaboration or just want to chat about
-          these topics. I am always happy to meet new people, learn about their
-          work, and help out in any way I can (although I am{" "}
-          <b className="font-bold">not</b> currently looking for another
-          full-time role at the moment).
+          I&apos;m interested in all things science, technology, and business
+          (especially start-ups and scale-ups). If you&apos;re interested in
+          connecting with me or are looking for some technical advice, feel free
+          to reach out to me on my socials or via email.
         </p>
       </div>
       <div className="py-8 text-xl font-bold text-slate-100 lg:mt-12">
