@@ -21,12 +21,12 @@
     "luxon": "3.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "vike": "0.4.168",
-    "vike-react": "0.4.6"
+    "vike": "0.4.171",
+    "vike-react": "0.4.8"
   },
   "devDependencies": {
     "@tailwindcss/typography": "0.5.10",
-    "@vitejs/plugin-react-swc": "3.0.0",
+    "@vitejs/plugin-react-swc": "3.6.0",
     "autoprefixer": "10.4.18",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
@@ -40,8 +40,8 @@
     "tailwindcss": "3.4.1",
     "typescript": "5.4.2",
     "typescript-eslint": "7.2.0",
-    "unplugin-fonts": "1.0.3",
-    "vite": "4.5.3"
+    "unplugin-fonts": "1.1.1",
+    "vite": "5.2.11"
   },
   "pnpm": {
     "overrides": {

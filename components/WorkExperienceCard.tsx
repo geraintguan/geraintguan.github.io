@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { DateTime, Interval } from "luxon";
+import { ReactNode, Suspense, lazy } from "react";
+import { DateRangeSkeleton } from "./DateRangeSkeleton";
 
 export type WorkExperienceCardProps = {
   readonly startDate: Date;
@@ -20,33 +20,14 @@ export function WorkExperienceCard({
   description,
   badges = emptyArray,
 }: WorkExperienceCardProps) {
-  const formattedStartDate =
-    DateTime.fromJSDate(startDate).toFormat("MMM yyyy");
-  const formattedEndDate = endDate
-    ? DateTime.fromJSDate(endDate).toFormat("MMM yyyy")
-    : "Present";
-
-  const duration = Interval.fromDateTimes(
-    DateTime.fromJSDate(startDate),
-    DateTime.fromJSDate(endDate ?? new Date()),
-  )
-    .toDuration()
-    .rescale();
-
-  const years = duration.get("years");
-  const months = duration.get("months");
+  const DateRange = lazy(() => import("./DateRange.tsx"));
 
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col lg:flex-row lg:space-x-8">
-        <div className="flex flex-1 flex-col text-slate-400">
-          <div className="uppercase">
-            {formattedStartDate} — {formattedEndDate}
-          </div>
-          <div>
-            {years > 0 ? `${years}Y` : ""} {months > 0 ? `${months}M` : ""}
-          </div>
-        </div>
+        <Suspense fallback={<DateRangeSkeleton />}>
+          <DateRange end={endDate} start={startDate} />
+        </Suspense>
         <div className="mt-4 flex flex-col lg:mt-0">
           <div className="text-right text-lg font-bold text-slate-100">
             {title}
