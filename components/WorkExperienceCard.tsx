@@ -1,7 +1,10 @@
-import { ReactNode, Suspense, lazy } from "react";
-import { DateRangeSkeleton } from "./DateRangeSkeleton";
+import { ReactNode } from "react";
+import load from "@loadable/component";
+import DateRangeSkeleton from "./DateRangeSkeleton";
 
-const DateRange = lazy(() => import("./DateRange.tsx"));
+const DateRange = load(() => import("./DateRange"), {
+  fallback: <DateRangeSkeleton />,
+});
 
 const emptyArray: string[] = [];
 
@@ -25,9 +28,7 @@ export function WorkExperienceCard({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col lg:flex-row lg:space-x-8">
-        <Suspense fallback={<DateRangeSkeleton />}>
-          <DateRange end={endDate} start={startDate} />
-        </Suspense>
+        <DateRange end={endDate} start={startDate} />
         <div className="mt-4 flex flex-col lg:mt-0">
           <div className="text-right text-lg font-bold text-slate-100">
             {title}
