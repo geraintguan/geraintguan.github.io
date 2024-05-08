@@ -1,6 +1,10 @@
 import { ReactNode, Suspense, lazy } from "react";
 import { DateRangeSkeleton } from "./DateRangeSkeleton";
 
+const DateRange = lazy(() => import("./DateRange.tsx"));
+
+const emptyArray: string[] = [];
+
 export type WorkExperienceCardProps = {
   readonly startDate: Date;
   readonly endDate?: Date;
@@ -10,8 +14,6 @@ export type WorkExperienceCardProps = {
   readonly badges?: string[];
 };
 
-const emptyArray: string[] = [];
-
 export function WorkExperienceCard({
   startDate,
   endDate = undefined,
@@ -20,8 +22,6 @@ export function WorkExperienceCard({
   description,
   badges = emptyArray,
 }: WorkExperienceCardProps) {
-  const DateRange = lazy(() => import("./DateRange.tsx"));
-
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col lg:flex-row lg:space-x-8">
