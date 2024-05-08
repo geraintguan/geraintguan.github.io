@@ -38,6 +38,7 @@ export default function Page() {
             "JavaScript",
             "TypeScript",
             "AWS",
+            "Docker",
             "MongoDB",
             "AngularJS (1.x)",
             "React",
@@ -65,6 +66,7 @@ export default function Page() {
             "JavaScript",
             "TypeScript",
             "AWS",
+            "Docker",
             "MongoDB",
             "AngularJS (1.x)",
             "React",
@@ -114,6 +116,7 @@ export default function Page() {
             "JavaScript",
             "TypeScript",
             "AWS",
+            "Docker",
             "MongoDB",
             "AngularJS (1.x)",
             "React",
@@ -156,6 +159,7 @@ export default function Page() {
             "PHP",
             "JavaScript",
             "AWS",
+            "Docker",
             "MongoDB",
             "AngularJS (1.x)",
             "Node.js",
@@ -164,9 +168,20 @@ export default function Page() {
             <article className="prose prose-invert">
               <p>
                 Worked as an independent contributor in an early-stage
-                engineering team on significant projects including a new public
-                REST API and a complete rewrite of the core availability engine.
+                engineering team, undertaking large-scale solo projects.
               </p>
+              <p className="font-bold text-slate-100">Notable Achievements</p>
+              <ul>
+                <li>
+                  Built the first version of our public API with robust
+                  automated testing.
+                </li>
+                <li>
+                  Rewrote a complex PHP legacy availability engine as a Node.js
+                  service and contributed the rollout of the transition to the
+                  new service with a senior engineer on the team.
+                </li>
+              </ul>
             </article>
           }
           endDate={new Date("2019-01-01")}
