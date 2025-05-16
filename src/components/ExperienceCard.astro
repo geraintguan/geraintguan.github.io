@@ -1,0 +1,96 @@
+---
+import type { ImageMetadata } from "astro";
+
+import { Temporal } from "@js-temporal/polyfill";
+import { Image } from "astro:assets";
+import clsx from "clsx";
+
+import Tag from "./Tag.astro";
+
+interface Props {
+  company: {
+    name: string;
+    url: string;
+  };
+  end?: Temporal.PlainDate;
+  image: {
+    alt: string;
+    class?: string;
+    height: number;
+    src: ImageMetadata;
+    width: number;
+  };
+  start: Temporal.PlainDate;
+  tags?: string[];
+  title: string;
+}
+
+const { company, end, image, start, tags = [], title } = Astro.props;
+
+const duration = start.until(end ?? Temporal.Now.plainDateISO(), {
+  largestUnit: "year",
+  smallestUnit: "month",
+});
+
+const formattedStart = start.toLocaleString("en-GB", {
+  month: "short",
+  year: "numeric",
+});
+
+const formattedEnd = end
+  ? end.toLocaleString("en-GB", {
+      month: "short",
+      year: "numeric",
+    })
+  : "Present";
+
+const formattedDuration = duration.toLocaleString("en-GB");
+---
+
+<div
+  class="flex flex-col rounded-lg border border-solarized-base1 shadow-md md:flex-row"
+>
+  <div
+    class={clsx(
+      "flex max-md:rounded-t-lg bg-white p-4 md:rounded-l-lg min-w-[260px]",
+      image.class,
+    )}
+  >
+    <Image
+      alt={image.alt}
+      class="m-auto"
+      height={image.height}
+      src={image.src}
+      width={image.width}
+    />
+  </div>
+  <div class="flex w-full flex-col gap-4 p-4">
+    <h1 class="text-xl font-semibold text-solarized-base01">{title}</h1>
+    <div
+      class="flex w-full flex-col gap-1 py-2 text-xl md:flex-row-reverse md:justify-between"
+    >
+      <div>
+        <span>{formattedStart} &mdash; {formattedEnd}</span>
+        <i class="italic">({formattedDuration})</i>
+      </div>
+      <a
+        class="underline"
+        href={company.url}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        {company.name}
+      </a>
+    </div>
+    <div class="flex h-fit flex-row flex-wrap gap-2">
+      {
+        tags.map((tag) => {
+          return <Tag label={tag} />;
+        })
+      }
+    </div>
+    <div class="mt-2">
+      <slot />
+    </div>
+  </div>
+</div>

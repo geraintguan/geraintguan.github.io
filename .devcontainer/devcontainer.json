@@ -1,36 +1,42 @@
-// cSpell: disable
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-  "name": "geraintguan.github.io",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:0-20",
+  "name": "geraintguan/geraintguan.github.io",
+
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
 
   "features": {
-    "ghcr.io/devcontainers-contrib/features/pnpm:2": {
-      "version": "9"
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "installYarnUsingApt": true,
+      "version": "latest",
+      "pnpmVersion": "latest",
+      "nvmVersion": "latest"
     }
   },
 
   "customizations": {
     "vscode": {
       "extensions": [
-        "esbenp.prettier-vscode",
         "streetsidesoftware.code-spell-checker",
-        "bradlc.vscode-tailwindcss",
-        "github.vscode-github-actions"
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "astro-build.astro-vscode",
+        "streetsidesoftware.code-spell-checker-british-english",
+        "joshbolduc.commitlint",
+        "EditorConfig.EditorConfig",
+        "github.vscode-github-actions",
+        "YoavBls.pretty-ts-errors",
+        "bradlc.vscode-tailwindcss"
       ]
     }
   },
 
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
+  "postStartCommand": "pnpm install"
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "pnpm install"
+  // "postCreateCommand": "uname -a",
 
   // Configure tool-specific properties.
   // "customizations": {},
