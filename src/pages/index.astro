@@ -1,0 +1,219 @@
+---
+import AppointeddLogo from "@images/appointedd-logo.svg";
+import ClearSkyLogicLogo from "@images/clearskylogic-logo.jpg";
+import profileImage from "@images/profile.png";
+import { Temporal } from "@js-temporal/polyfill";
+import DefaultLayout from "@layouts/DefaultLayout.astro";
+import { Image } from "astro:assets";
+import clsx from "clsx";
+import ExperienceCard from "src/components/ExperienceCard.astro";
+
+const images = {
+  companies: {
+    appointedd: {
+      alt: "Appointedd Logo",
+      height: 80,
+      src: AppointeddLogo,
+      width: 220,
+    },
+    clearSkyLogic: {
+      alt: "ClearSky Logic Logo",
+      class: clsx("!bg-[#19181D]"),
+      height: 80,
+      src: ClearSkyLogicLogo,
+      width: 80,
+    },
+  },
+};
+---
+
+<DefaultLayout>
+  <div class="flex flex-col justify-center gap-12 px-4 py-24 md:px-24">
+    <Image
+      alt="Profile Image"
+      class="mx-auto rounded-full border-8 border-solarized-base2 shadow-2xl"
+      height={200}
+      src={profileImage}
+      width={200}
+    />
+    <div class="flex flex-col gap-4">
+      <h1 class="mx-auto">Geraint Guan</h1>
+      <p class="px-16 text-center text-2xl text-solarized-base01">
+        Senior technical leader and independent contributor with over 8 years of
+        experience including cross collaboration across all areas of business.
+        Obsessed with building amazing products and solving impactful problems
+        with ambitious teams.
+      </p>
+    </div>
+    <div class="flex flex-col gap-12">
+      <h1 class="mx-auto">Experience</h1>
+      <ExperienceCard
+        company={{
+          name: "ClearSky Logic",
+          url: "https://clearskylogic.com",
+        }}
+        image={images.companies.clearSkyLogic}
+        start={Temporal.PlainDate.from("2025-03-01")}
+        tags={[
+          "Azure",
+          "C#",
+          ".NET",
+          "MSSQL",
+          "Azure DevOps",
+          "Azure DevOps Pipelines",
+        ]}
+        title="Tech Lead"
+      >
+        <p>
+          As Tech Lead at ClearSky Logic, I quickly began contributing to a
+          high-impact project for a major client in a tightly regulated sector.
+          I designed and documented a robust technical architecture meeting
+          complex security requirements, led a team of three engineers with
+          hands-on mentorship, and delivered proof-of-concept applications using
+          .NET and Flutter. I also supported agile delivery through user story
+          mapping, sprint planning, and defining technical task scope at a high
+          level.
+        </p>
+      </ExperienceCard>
+      <ExperienceCard
+        company={{
+          name: "Appointedd",
+          url: "https://appointedd.com",
+        }}
+        end={Temporal.PlainDate.from("2025-03-01")}
+        image={images.companies.appointedd}
+        start={Temporal.PlainDate.from("2023-10-01")}
+        tags={[
+          "AWS",
+          "TypeScript",
+          "React",
+          "Node.js",
+          "MongoDB",
+          "React Native",
+          "GraphQL",
+          "tRPC",
+          "Fastify",
+          "Expo",
+          "JavaScript",
+          "AngularJS",
+          "PHP",
+          "Docker",
+          "GitHub",
+          "GitHub Actions",
+        ]}
+        title="Head of Developer Operations"
+      >
+        <p>
+          As Head of Developer Operations I established a Developer Operations
+          department from scratch. I reduced errors with privacy-compliant
+          monitoring and built a triage process to streamline technical
+          resolution of customer issues and queries. I continued to scope and
+          deliver key product features such as a new payment provider
+          integration that helped us close major enterprise clients. I also
+          supported the commercial team on sales and support calls in order to
+          close and retain key clients.
+        </p>
+      </ExperienceCard>
+      <ExperienceCard
+        company={{
+          name: "Appointedd",
+          url: "https://appointedd.com",
+        }}
+        end={Temporal.PlainDate.from("2023-10-01")}
+        image={images.companies.appointedd}
+        start={Temporal.PlainDate.from("2020-04-01")}
+        tags={[
+          "AWS",
+          "TypeScript",
+          "React",
+          "Node.js",
+          "MongoDB",
+          "React Native",
+          "GraphQL",
+          "tRPC",
+          "Fastify",
+          "JavaScript",
+          "AngularJS",
+          "PHP",
+          "Docker",
+          "GitHub",
+          "GItHub Actions",
+        ]}
+        title="Lead Software Engineer"
+      >
+        <p>
+          As Lead Software Engineer I led a product team of 2 to 3 engineers,
+          scoping and delivering key features end-to-end—including a Zapier
+          integration and SAML. I introduced new tools and processes to the
+          wider engineering team to boost developer productivity. I also
+          supported the commercial team on sales and support calls in order to
+          close and retain key clients.
+        </p>
+      </ExperienceCard>
+      <ExperienceCard
+        company={{
+          name: "Appointedd",
+          url: "https://appointedd.com",
+        }}
+        end={Temporal.PlainDate.from("2020-04-01")}
+        image={images.companies.appointedd}
+        start={Temporal.PlainDate.from("2019-01-01")}
+        tags={[
+          "AWS",
+          "TypeScript",
+          "React",
+          "Node.js",
+          "MongoDB",
+          "React Native",
+          "GraphQL",
+          "Fastify",
+          "JavaScript",
+          "AngularJS",
+          "PHP",
+          "Docker",
+          "GitHub",
+          "GItHub Actions",
+        ]}
+        title="Senior Software Engineer"
+      >
+        <p>
+          As Senior Software Engineer I delivered major product improvements,
+          including a full rewrite of the core bookings engine that cut
+          infrastructure costs by 20% and boosted stability. I introduced new
+          technologies to enhance productivity and performance, while supporting
+          both the wider engineering and commercial teams to resolve customer
+          issues, helping win and retain key clients.
+        </p>
+      </ExperienceCard>
+      <ExperienceCard
+        company={{
+          name: "Appointedd",
+          url: "https://appointedd.com",
+        }}
+        end={Temporal.PlainDate.from("2019-01-01")}
+        image={images.companies.appointedd}
+        start={Temporal.PlainDate.from("2017-01-01")}
+        tags={[
+          "AWS",
+          "JavaScript",
+          "AngularJS",
+          "Node.js",
+          "MongoDB",
+          "PHP",
+          "Docker",
+          "CodeShip",
+        ]}
+        title="Software Engineer"
+      >
+        <p>
+          As Software Engineer I delivered key product features end-to-end
+          including the ability to import customers into the product, a full
+          performant rewrite of the core bookings engine from PHP to Node.js,
+          and the first version of the public API consumable by our clients. I
+          also managed support tickets and inquiries and handled investigation
+          and resolution of those issues.
+        </p>
+      </ExperienceCard>
+    </div>
+  </div>
+</DefaultLayout>

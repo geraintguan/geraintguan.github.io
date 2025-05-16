@@ -1,0 +1,362 @@
+---
+import angularjsLogo from "@images/angularjs-logo.png";
+import awsLogo from "@images/aws-logo.png";
+import azureDevOpsLogo from "@images/azure-devops-logo.png";
+import azureLogo from "@images/azure-logo.png";
+import codeshipLogo from "@images/codeship-logo.png";
+import csharpLogo from "@images/csharp-logo.png";
+import dockerLogo from "@images/docker-logo.png";
+import dotNetLogo from "@images/dotnet-logo.png";
+import expoLogo from "@images/expo-logo.png";
+import fastifyLogo from "@images/fastify-logo.png";
+import githubLogo from "@images/github-logo.png";
+import graphqlLogo from "@images/graphql-logo.png";
+import javascriptLogo from "@images/javascript-logo.png";
+import mongodbLogo from "@images/mongodb-logo.svg";
+import mssqlLogo from "@images/mssql-logo.png";
+import nodejsLogo from "@images/nodejs-logo.png";
+import phpLogo from "@images/php-logo.png";
+import reactLogo from "@images/react-logo.svg";
+import trpcLogo from "@images/trpc-logo.svg";
+import typescriptLogo from "@images/typescript-logo.png";
+import { Image } from "astro:assets";
+import clsx from "clsx";
+
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+
+const backgrounds: Record<string, string> = {
+  ".net": clsx("bg-[#512BD4]"),
+  angularjs: clsx("bg-[#C44638]"),
+  aws: clsx("bg-[#FF9900]"),
+  azure: clsx("bg-[#0960AE]"),
+  "azure devops": clsx("bg-[#0E7ED8]"),
+  "azure devops pipelines": clsx("bg-[#0E7ED8]"),
+  "c#": clsx("bg-[#7659DE]"),
+  codeship: clsx("bg-[#004466]"),
+  default: clsx("bg-solarized-base01"),
+  docker: clsx("bg-[#1D63ED]"),
+  expo: clsx("bg-[#111113]"),
+  fastify: clsx("bg-[#1B1B1D]"),
+  github: clsx("bg-black"),
+  "github actions": clsx("bg-black"),
+  graphql: clsx("bg-[#E10098]"),
+  javascript: clsx("bg-[#F0DB4F]"),
+  mongodb: clsx("bg-[#00684A]"),
+  mssql: clsx("bg-[#B92224]"),
+  "node.js": clsx("bg-[#8CC84B]"),
+  php: clsx("bg-[#8387BC]"),
+  react: clsx("bg-[#75C2D9]"),
+  "react native": clsx("bg-[#75C2D9]"),
+  trpc: clsx("bg-[#477CB4]"),
+  typescript: clsx("bg-[#4377C1]"),
+};
+
+const borders: Record<string, string> = {
+  ".net": clsx("border border-[#512BD4]"),
+  angularjs: clsx("border border-[#C44638]"),
+  aws: clsx("border border-[#FF9900]"),
+  azure: clsx("border border-[#0960AE]"),
+  "azure devops": clsx("border border-[#0E7ED8]"),
+  "azure devops pipelines": clsx("border border-[#0E7ED8]"),
+  "c#": clsx("border border-[#7659DE]"),
+  codeship: clsx("border border-[#004466]"),
+  default: clsx("border border-solarized-base01"),
+  docker: clsx("border border-[#1D63ED]"),
+  expo: clsx("border border-[#111113]"),
+  fastify: clsx("border border-[#1B1B1D]"),
+  github: clsx("border border-black"),
+  "github actions": clsx("border border-black"),
+  graphql: clsx("border border-[#E10098]"),
+  javascript: clsx("border border-[#F0DB4F]"),
+  mongodb: clsx("border border-[#00684A]"),
+  mssql: clsx("border border-[#B92224]"),
+  "node.js": clsx("border border-[#8CC84B]"),
+  php: clsx("border border-[#8387BC]"),
+  react: clsx("border border-[#75C2D9]"),
+  "react native": clsx("border border-[#75C2D9]"),
+  trpc: clsx("border border-[#477CB4]"),
+  typescript: clsx("border border-[#4377C1]"),
+};
+
+const texts: Record<string, string> = {
+  default: clsx("text-white"),
+  javascript: clsx("text-black"),
+  php: clsx("text-black"),
+};
+
+const labelKey = label.toLocaleLowerCase();
+
+const background = backgrounds[labelKey] ?? backgrounds.default;
+const border = borders[labelKey] ?? borders.default;
+const text = texts[labelKey] ?? texts.default;
+---
+
+<div class={clsx(background, border, "flex flex-row rounded-full")}>
+  <span class={clsx(text, "m-auto px-2 py-1 text-xs font-semibold")}
+    >{label}
+  </span>
+  {
+    labelKey === "angularjs" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="AngularJS Logo"
+          class="m-auto"
+          height={16}
+          src={angularjsLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "aws" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="AWS Logo"
+          class="m-auto"
+          height={18}
+          src={awsLogo}
+          width={18}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "azure" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Azure Logo"
+          class="m-auto"
+          height={16}
+          src={azureLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    (labelKey === "azure devops" || labelKey === "azure devops pipelines") && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Azure DevOps Logo"
+          class="m-auto"
+          height={16}
+          src={azureDevOpsLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "c#" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="C# Logo"
+          class="m-auto"
+          height={16}
+          src={csharpLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "codeship" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Codeship Logo"
+          class="m-auto"
+          height={16}
+          src={codeshipLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "docker" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Docker Logo"
+          class="m-auto"
+          height={16}
+          src={dockerLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === ".net" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt=".NET Logo"
+          class="m-auto"
+          height={16}
+          src={dotNetLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "expo" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Expo Logo"
+          class="m-auto"
+          height={16}
+          src={expoLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "fastify" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Fastify Logo"
+          class="m-auto"
+          height={16}
+          src={fastifyLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    (labelKey === "github" || labelKey == "github actions") && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="GitHub Logo"
+          class="m-auto"
+          height={16}
+          src={githubLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "graphql" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="GraphQL Logo"
+          class="m-auto"
+          height={16}
+          src={graphqlLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "javascript" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="JavaScript Logo"
+          class="m-auto"
+          height={16}
+          src={javascriptLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "mongodb" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-3 py-1">
+        <Image
+          alt="MongoDB Logo"
+          class="m-auto"
+          height={8}
+          src={mongodbLogo}
+          width={8}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "mssql" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="MSSQL Logo"
+          class="m-auto"
+          height={16}
+          src={mssqlLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "node.js" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Node.js Logo"
+          class="m-auto"
+          height={16}
+          src={nodejsLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "php" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="PHP Logo"
+          class="m-auto"
+          height={16}
+          src={phpLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    (labelKey === "react" || labelKey === "react native") && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="React Logo"
+          class="m-auto"
+          height={16}
+          src={reactLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "trpc" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="tRPC Logo"
+          class="m-auto"
+          height={16}
+          src={trpcLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "typescript" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Typescript Logo"
+          class="m-auto"
+          height={16}
+          src={typescriptLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+</div>
