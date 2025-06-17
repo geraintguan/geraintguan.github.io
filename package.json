@@ -4,14 +4,14 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "lint": "eslint",
     "preview": "astro preview"
   },
   "dependencies": {
     "@js-temporal/polyfill": "0.5.1",
     "@tailwindcss/vite": "4.1.7",
-    "astro": "5.7.13",
+    "astro": "5.9.4",
     "clsx": "2.1.1",
     "globals": "16.1.0",
     "tailwindcss": "4.1.7"
