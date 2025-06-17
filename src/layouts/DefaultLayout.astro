@@ -1,5 +1,6 @@
 ---
 import "@styles/global.css";
+import ThemeToggle from "src/components/ThemeToggle.astro";
 ---
 
 <html lang="en">
@@ -11,6 +12,9 @@ import "@styles/global.css";
     <title>Geraint Guan</title>
   </head>
   <body class="bg-solarized-base3">
+    <nav class="p-4">
+      <ThemeToggle />
+    </nav>
     <slot />
   </body>
 </html>
