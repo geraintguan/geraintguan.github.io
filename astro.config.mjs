@@ -1,6 +1,6 @@
+// @ts-check
 import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
-// @ts-check
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
