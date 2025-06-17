@@ -33,7 +33,7 @@ const images = {
   <div class="flex flex-col justify-center gap-12 px-4 py-24 md:px-24">
     <Image
       alt="Profile Image"
-      class="mx-auto rounded-full border-8 border-solarized-base2 shadow-2xl"
+      class="mx-auto rounded-full border-8 border-solarized-base2 shadow-2xl dark:border-solarized-base02"
       height={200}
       src={profileImage}
       width={200}
@@ -43,199 +43,285 @@ const images = {
         <h1 class="mx-auto">Geraint Guan</h1>
         <Divider color="red" />
       </div>
-      <p class="px-12 text-center text-2xl text-solarized-base01 md:px-24">
-        Senior technical leader and individual contributor with over 8 years of
-        experience including cross collaboration across all areas of business.
-        Obsessed with building amazing products and solving impactful problems
-        with ambitious teams.
+      <p class="px-12 text-center text-2xl md:px-24">
+        I build software end-to-end from 0 → 1 and scale them beyond minimum
+        viable products.
+        <div class="m-auto flex flex-row gap-4 pt-8">
+          <IconLink
+            href="https://www.linkedin.com/in/geraintguan/"
+            icon="fa6-brands:linkedin"
+          />
+          <IconLink
+            href="https://github.com/geraintguan"
+            icon="fa6-brands:github-square"
+          />
+          <IconLink
+            href="mailto:hello@geraint.cloud"
+            icon="fa6-solid:square-envelope"
+          />
+        </div>
       </p>
-      <div class="m-auto flex flex-row gap-4 pt-8">
-        <IconLink
-          href="https://www.linkedin.com/in/geraintguan/"
-          icon="fa6-brands:linkedin"
-        />
-        <IconLink
-          href="https://github.com/geraintguan"
-          icon="fa6-brands:github-square"
-        />
-        <IconLink
-          href="mailto:hello@geraint.cloud"
-          icon="fa6-solid:square-envelope"
-        />
+      <div class="flex flex-col gap-12">
+        <div class="mx-auto flex flex-col gap-4">
+          <h1 class="mx-auto">Experience</h1>
+          <Divider />
+        </div>
+        <ExperienceCard
+          company={{
+            name: "ClearSky Logic",
+            url: "https://clearskylogic.com",
+          }}
+          image={images.companies.clearSkyLogic}
+          start={Temporal.PlainDate.from("2025-03-01")}
+          tags={[
+            "Azure",
+            "C#",
+            ".NET",
+            "MSSQL",
+            "Azure DevOps",
+            "Azure DevOps Pipelines",
+          ]}
+          title="Tech Lead"
+        >
+          <div class="flex flex-col gap-4">
+            <p>
+              I joined in the middle of discovery for a new client project and
+              after successful completion I am now leading a team of 3 engineers
+              in the implementation phase.
+            </p>
+
+            <div>
+              <b>Notable Achievements</b>
+              <ul class="list-disc pl-8">
+                <li>
+                  Successfully completed discovery phase for a new client
+                  project.
+                </li>
+                <li>
+                  Created a technical architecture plan in a high complexity and
+                  security environment that was well received and approved by
+                  the client.
+                </li>
+                <li>
+                  Leading an implementation team of 3 engineers with a mixture
+                  of technical stakeholder management with the client,
+                  supporting the team technically, and some hands-on individual
+                  contributions.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ExperienceCard>
+        <ExperienceCard
+          company={{
+            name: "Appointedd",
+            url: "https://appointedd.com",
+          }}
+          end={Temporal.PlainDate.from("2025-03-01")}
+          image={images.companies.appointedd}
+          start={Temporal.PlainDate.from("2023-10-01")}
+          tags={[
+            "AWS",
+            "TypeScript",
+            "React",
+            "Node.js",
+            "MongoDB",
+            "React Native",
+            "GraphQL",
+            "tRPC",
+            "Fastify",
+            "Expo",
+            "JavaScript",
+            "AngularJS",
+            "PHP",
+            "Docker",
+            "GitHub",
+            "GitHub Actions",
+          ]}
+          title="Head of Developer Operations"
+        >
+          <div class="flex flex-col gap-4">
+            <p>
+              I started to take on more leadership responsibilities by heading
+              up a department focused on maintaining and improving Appointedd's
+              infrastructure, internal tooling, and customer issue triage
+              processes. I continued to support the wider engineering team with
+              building key product features.
+            </p>
+
+            <div>
+              <b>Notable Achievements</b>
+              <ul class="list-disc pl-8">
+                <li>
+                  Worked with leadership to spearhead building a developer
+                  operations department and reorganise team structure.
+                </li>
+                <li>
+                  Designed a well received high-level modern architecture plan
+                  with clear next steps to work towards to.
+                </li>
+                <li>
+                  Advised leadership on technical strategy, issues, and culture.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ExperienceCard>
+        <ExperienceCard
+          company={{
+            name: "Appointedd",
+            url: "https://appointedd.com",
+          }}
+          end={Temporal.PlainDate.from("2023-10-01")}
+          image={images.companies.appointedd}
+          start={Temporal.PlainDate.from("2020-04-01")}
+          tags={[
+            "AWS",
+            "TypeScript",
+            "React",
+            "Node.js",
+            "MongoDB",
+            "React Native",
+            "GraphQL",
+            "tRPC",
+            "Fastify",
+            "JavaScript",
+            "AngularJS",
+            "PHP",
+            "Docker",
+            "GitHub",
+            "GItHub Actions",
+          ]}
+          title="Lead Software Engineer"
+        >
+          <div class="flex flex-col gap-4">
+            <p>
+              I started to take on more leadership responsibilities along with
+              my individual contribution work, balancing the two
+              responsibilities. I led a product development team of 2 - 3
+              engineers, scoping and delivering key product features and
+              improvements from conception to release.
+            </p>
+
+            <div>
+              <b>Notable Achievements</b>
+              <ul class="list-disc pl-8">
+                <li>
+                  Led, mentored, and line managed a team of 2 - 3 product
+                  engineers to successfully deliver numerous key product
+                  features and improvements.
+                </li>
+                <li>
+                  Successfully worked end-to-end solo to deliver a key client
+                  requested mobile app integration.
+                </li>
+                <li>
+                  Supported client success team with problem solving and fixing
+                  critical client issues.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ExperienceCard>
+        <ExperienceCard
+          company={{
+            name: "Appointedd",
+            url: "https://appointedd.com",
+          }}
+          end={Temporal.PlainDate.from("2020-04-01")}
+          image={images.companies.appointedd}
+          start={Temporal.PlainDate.from("2019-01-01")}
+          tags={[
+            "AWS",
+            "TypeScript",
+            "React",
+            "Node.js",
+            "MongoDB",
+            "React Native",
+            "GraphQL",
+            "Fastify",
+            "JavaScript",
+            "AngularJS",
+            "PHP",
+            "Docker",
+            "GitHub",
+            "GItHub Actions",
+          ]}
+          title="Senior Software Engineer"
+        >
+          <div class="flex flex-col gap-4">
+            <p>
+              I continued to develop my technical and product skills as I
+              progressed in seniority. Continued to do solo feature development,
+              supporting other team members in the engineering team, and started
+              to contribute to infrastructure maintenance and development.
+            </p>
+
+            <div>
+              <b>Notable Achievements</b>
+              <ul class="list-disc pl-8">
+                <li>
+                  Migrated core bookings engine to serverless reducing
+                  infrastructure costs by 20% and improving stability.
+                </li>
+                <li>
+                  Spearheaded introduction of new technologies and processes
+                  improving developer productivity and application performance.
+                </li>
+                <li>
+                  Supported commercial and client success teams on calls to help
+                  close and retain key clients.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ExperienceCard>
+        <ExperienceCard
+          company={{
+            name: "Appointedd",
+            url: "https://appointedd.com",
+          }}
+          end={Temporal.PlainDate.from("2019-01-01")}
+          image={images.companies.appointedd}
+          start={Temporal.PlainDate.from("2017-01-01")}
+          tags={[
+            "AWS",
+            "JavaScript",
+            "AngularJS",
+            "Node.js",
+            "MongoDB",
+            "PHP",
+            "Docker",
+            "CodeShip",
+          ]}
+          title="Software Engineer"
+        >
+          <div class="flex flex-col gap-4">
+            <p>
+              My first professional role after graduating. I primarily did solo
+              feature development and bug fixing, as well as customer support
+              rotations.
+            </p>
+
+            <div>
+              <b>Notable Achievements</b>
+              <ul class="list-disc pl-8">
+                <li>
+                  Built the first version of our public-facing RESTful API.
+                </li>
+                <li>
+                  Completely rebuilt our core availability engine and launched
+                  it with no outages.
+                </li>
+                <li>
+                  Created technical challenge that we used to hire further
+                  engineers to the team.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ExperienceCard>
       </div>
-    </div>
-    <div class="flex flex-col gap-12">
-      <div class="mx-auto flex flex-col gap-4">
-        <h1 class="mx-auto">Experience</h1>
-        <Divider />
-      </div>
-      <ExperienceCard
-        company={{
-          name: "ClearSky Logic",
-          url: "https://clearskylogic.com",
-        }}
-        image={images.companies.clearSkyLogic}
-        start={Temporal.PlainDate.from("2025-03-01")}
-        tags={[
-          "Azure",
-          "C#",
-          ".NET",
-          "MSSQL",
-          "Azure DevOps",
-          "Azure DevOps Pipelines",
-        ]}
-        title="Tech Lead"
-      >
-        <p>
-          As Tech Lead at ClearSky Logic, I quickly began contributing to a
-          high-impact project for a major client in a tightly regulated sector.
-          I designed and documented a robust technical architecture meeting
-          complex security requirements, led a team of three engineers with
-          hands-on mentorship, and delivered proof-of-concept applications using
-          .NET and Flutter. I also supported agile delivery through user story
-          mapping, sprint planning, and defining technical task scope at a high
-          level.
-        </p>
-      </ExperienceCard>
-      <ExperienceCard
-        company={{
-          name: "Appointedd",
-          url: "https://appointedd.com",
-        }}
-        end={Temporal.PlainDate.from("2025-03-01")}
-        image={images.companies.appointedd}
-        start={Temporal.PlainDate.from("2023-10-01")}
-        tags={[
-          "AWS",
-          "TypeScript",
-          "React",
-          "Node.js",
-          "MongoDB",
-          "React Native",
-          "GraphQL",
-          "tRPC",
-          "Fastify",
-          "Expo",
-          "JavaScript",
-          "AngularJS",
-          "PHP",
-          "Docker",
-          "GitHub",
-          "GitHub Actions",
-        ]}
-        title="Head of Developer Operations"
-      >
-        <p>
-          As Head of Developer Operations I established a Developer Operations
-          department from scratch. I reduced errors with privacy-compliant
-          monitoring and built a triage process to streamline technical
-          resolution of customer issues and queries. I continued to scope and
-          deliver key product features such as a new payment provider
-          integration that helped us close major enterprise clients. I also
-          supported the commercial team on sales and support calls in order to
-          close and retain key clients.
-        </p>
-      </ExperienceCard>
-      <ExperienceCard
-        company={{
-          name: "Appointedd",
-          url: "https://appointedd.com",
-        }}
-        end={Temporal.PlainDate.from("2023-10-01")}
-        image={images.companies.appointedd}
-        start={Temporal.PlainDate.from("2020-04-01")}
-        tags={[
-          "AWS",
-          "TypeScript",
-          "React",
-          "Node.js",
-          "MongoDB",
-          "React Native",
-          "GraphQL",
-          "tRPC",
-          "Fastify",
-          "JavaScript",
-          "AngularJS",
-          "PHP",
-          "Docker",
-          "GitHub",
-          "GItHub Actions",
-        ]}
-        title="Lead Software Engineer"
-      >
-        <p>
-          As Lead Software Engineer I led a product team of 2 to 3 engineers,
-          scoping and delivering key features end-to-end—including a Zapier
-          integration and SAML. I introduced new tools and processes to the
-          wider engineering team to boost developer productivity. I also
-          supported the commercial team on sales and support calls in order to
-          close and retain key clients.
-        </p>
-      </ExperienceCard>
-      <ExperienceCard
-        company={{
-          name: "Appointedd",
-          url: "https://appointedd.com",
-        }}
-        end={Temporal.PlainDate.from("2020-04-01")}
-        image={images.companies.appointedd}
-        start={Temporal.PlainDate.from("2019-01-01")}
-        tags={[
-          "AWS",
-          "TypeScript",
-          "React",
-          "Node.js",
-          "MongoDB",
-          "React Native",
-          "GraphQL",
-          "Fastify",
-          "JavaScript",
-          "AngularJS",
-          "PHP",
-          "Docker",
-          "GitHub",
-          "GItHub Actions",
-        ]}
-        title="Senior Software Engineer"
-      >
-        <p>
-          As Senior Software Engineer I delivered major product improvements,
-          including a full rewrite of the core bookings engine that cut
-          infrastructure costs by 20% and boosted stability. I introduced new
-          technologies to enhance productivity and performance, while supporting
-          both the wider engineering and commercial teams to resolve customer
-          issues, helping win and retain key clients.
-        </p>
-      </ExperienceCard>
-      <ExperienceCard
-        company={{
-          name: "Appointedd",
-          url: "https://appointedd.com",
-        }}
-        end={Temporal.PlainDate.from("2019-01-01")}
-        image={images.companies.appointedd}
-        start={Temporal.PlainDate.from("2017-01-01")}
-        tags={[
-          "AWS",
-          "JavaScript",
-          "AngularJS",
-          "Node.js",
-          "MongoDB",
-          "PHP",
-          "Docker",
-          "CodeShip",
-        ]}
-        title="Software Engineer"
-      >
-        <p>
-          As Software Engineer I delivered key product features end-to-end
-          including the ability to import customers into the product, a full
-          performant rewrite of the core bookings engine from PHP to Node.js,
-          and the first version of the public API consumable by our clients. I
-          also managed support tickets and inquiries and handled investigation
-          and resolution of those issues.
-        </p>
-      </ExperienceCard>
     </div>
   </div>
 </DefaultLayout>

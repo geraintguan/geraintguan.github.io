@@ -30,4 +30,13 @@ const gradientColor = color ? colors[color] : colors.default;
     );
     margin: auto;
   }
+
+  html[data-theme="dark"] .gradient-line {
+    background: linear-gradient(
+      to right,
+      #002b36 0%,
+      var(--gradientColor) 50%,
+      #002b36 100%
+    );
+  }
 </style>

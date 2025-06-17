@@ -27,6 +27,9 @@
     }
   },
   "forwardPorts": [4321],
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
+  },
   "portsAttributes": {
     "4321": {
       "label": "Astro Dev Server",

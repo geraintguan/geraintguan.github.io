@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<button
+  class="h-[52px] w-[52px] cursor-pointer rounded-2xl border-2 border-solarized-base2 p-3 shadow-xl dark:border-solarized-base02"
+  id="theme-toggle-button"
+  type="button"
+>
+  <Icon
+    class="m-auto text-2xl dark:hidden"
+    id="theme-toggle-icon"
+    name="fa6-regular:moon"
+  />
+  <Icon
+    class="m-auto hidden text-2xl dark:block"
+    id="theme-toggle-icon"
+    name="fa6-regular:sun"
+  />
+</button>
+
+<script>
+  import { theme } from "@stores/ThemeStore";
+
+  const button = document.getElementById("theme-toggle-button");
+
+  if (!button) {
+    throw new Error("Could not find button with id 'theme-toggle-button'");
+  }
+
+  button.addEventListener("click", () => {
+    const currentTheme = theme.get();
+
+    if (currentTheme === "dark") {
+      theme.set("light");
+    } else {
+      theme.set("dark");
+    }
+  });
+</script>

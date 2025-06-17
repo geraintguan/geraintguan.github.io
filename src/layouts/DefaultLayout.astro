@@ -1,8 +1,9 @@
 ---
 import "@styles/global.css";
+import ThemeToggle from "src/components/ThemeToggle.astro";
 ---
 
-<html lang="en">
+<html data-theme="dark" lang="en">
   <head>
     <meta charset="utf-8" />
     <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
@@ -10,7 +11,20 @@ import "@styles/global.css";
     <meta content={Astro.generator} name="generator" />
     <title>Geraint Guan</title>
   </head>
-  <body class="bg-solarized-base3">
+  <body
+    class="bg-solarized-base3 text-solarized-base01 dark:bg-solarized-base03 dark:text-solarized-base3"
+  >
+    <nav class="p-4">
+      <ThemeToggle />
+    </nav>
     <slot />
   </body>
 </html>
+
+<script>
+  import { theme } from "@stores/ThemeStore";
+
+  theme.subscribe((v) => {
+    document.documentElement.setAttribute("data-theme", v);
+  });
+</script>

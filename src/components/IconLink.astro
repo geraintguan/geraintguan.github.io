@@ -12,7 +12,10 @@ const { class: className, href = "/#", icon } = Astro.props;
 ---
 
 <a
-  class={clsx("text-5xl text-solarized-base01 hover:text-black", className)}
+  class={clsx(
+    "text-5xl text-solarized-base01 dark:text-solarized-base2 hover:text-black dark:hover:text-solarized-base02",
+    className,
+  )}
   href={href}
   target="_blank"
 >
