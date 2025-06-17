@@ -6,6 +6,7 @@ import { Temporal } from "@js-temporal/polyfill";
 import DefaultLayout from "@layouts/DefaultLayout.astro";
 import { Image } from "astro:assets";
 import clsx from "clsx";
+import Divider from "src/components/Divider.astro";
 import ExperienceCard from "src/components/ExperienceCard.astro";
 
 const images = {
@@ -37,7 +38,10 @@ const images = {
       width={200}
     />
     <div class="flex flex-col gap-4">
-      <h1 class="mx-auto">Geraint Guan</h1>
+      <div class="mx-auto flex flex-col gap-4">
+        <h1 class="mx-auto">Geraint Guan</h1>
+        <Divider color="red" />
+      </div>
       <p class="px-12 text-center text-2xl text-solarized-base01 md:px-24">
         Senior technical leader and individual contributor with over 8 years of
         experience including cross collaboration across all areas of business.
@@ -46,7 +50,10 @@ const images = {
       </p>
     </div>
     <div class="flex flex-col gap-12">
-      <h1 class="mx-auto">Experience</h1>
+      <div class="mx-auto flex flex-col gap-4">
+        <h1 class="mx-auto">Experience</h1>
+        <Divider />
+      </div>
       <ExperienceCard
         company={{
           name: "ClearSky Logic",

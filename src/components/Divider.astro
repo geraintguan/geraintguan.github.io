@@ -1,0 +1,33 @@
+---
+import clsx from "clsx";
+
+const colors = {
+  default: clsx("#268bd2"),
+  red: clsx("#cb4b16"),
+};
+
+interface Props {
+  color?: keyof typeof colors;
+}
+
+const { color } = Astro.props;
+
+const gradientColor = color ? colors[color] : colors.default;
+---
+
+<div class="gradient-line"></div>
+
+<style define:vars={{ gradientColor }}>
+  .gradient-line {
+    height: 4px;
+    width: 200px;
+    border: none;
+    background: linear-gradient(
+      to right,
+      #fdf6e3 0%,
+      var(--gradientColor) 50%,
+      #fdf6e3 100%
+    );
+    margin: auto;
+  }
+</style>
