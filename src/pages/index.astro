@@ -8,6 +8,7 @@ import { Image } from "astro:assets";
 import clsx from "clsx";
 import Divider from "src/components/Divider.astro";
 import ExperienceCard from "src/components/ExperienceCard.astro";
+import IconLink from "src/components/IconLink.astro";
 
 const images = {
   companies: {
@@ -48,6 +49,20 @@ const images = {
         Obsessed with building amazing products and solving impactful problems
         with ambitious teams.
       </p>
+      <div class="m-auto flex flex-row gap-4 pt-8">
+        <IconLink
+          href="https://www.linkedin.com/in/geraintguan/"
+          icon="fa6-brands:linkedin"
+        />
+        <IconLink
+          href="https://github.com/geraintguan"
+          icon="fa6-brands:github-square"
+        />
+        <IconLink
+          href="mailto:hello@geraint.cloud"
+          icon="fa6-solid:square-envelope"
+        />
+      </div>
     </div>
     <div class="flex flex-col gap-12">
       <div class="mx-auto flex flex-col gap-4">

@@ -8,6 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@iconify-json/fa6-brands':
+        specifier: 1.2.5
+        version: 1.2.5
+      '@iconify-json/fa6-regular':
+        specifier: 1.2.3
+        version: 1.2.3
+      '@iconify-json/fa6-solid':
+        specifier: 1.2.3
+        version: 1.2.3
       '@js-temporal/polyfill':
         specifier: 0.5.1
         version: 0.5.1
@@ -339,6 +348,15 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
+
+  '@iconify-json/fa6-brands@1.2.5':
+    resolution: {integrity: sha512-U/iFfziz6jSN9zArOJZYTtoj2tQyh6MxPdI8M84DQ2kEulPaj8j+h9bqvjmzszNHmD7v+kmmKd/MLkMKk+3Zuw==}
+
+  '@iconify-json/fa6-regular@1.2.3':
+    resolution: {integrity: sha512-NGV2j5mn4j49mpP7MABCljp1WPWKjwgfjN6NGwsmlFuQ7bdnz36nZB/5aRXLOcT36NXaBeCoT05G9aatdtMr3A==}
+
+  '@iconify-json/fa6-solid@1.2.3':
+    resolution: {integrity: sha512-C5o8YJF+ekrS4wRb/6/0SE2KjRyJlCg++IOVC/fineiRinITivsmzFRNW1MQX2xfDZ1T7bxeKxLN6lcaTG3jGA==}
 
   '@iconify/tools@4.1.2':
     resolution: {integrity: sha512-q6NzLQYEN9zkDfcyBqD3vItHcZw97w/s++3H3TBxUORr57EfHxj6tOW6fyufDjMq+Vl56WXWaPx1csBPYlI5CA==}
@@ -3365,6 +3383,18 @@ snapshots:
   '@humanwhocodes/retry@0.3.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
+
+  '@iconify-json/fa6-brands@1.2.5':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/fa6-regular@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/fa6-solid@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/tools@4.1.2':
     dependencies:

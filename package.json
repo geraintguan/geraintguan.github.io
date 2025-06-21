@@ -9,6 +9,9 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@iconify-json/fa6-brands": "1.2.5",
+    "@iconify-json/fa6-regular": "1.2.3",
+    "@iconify-json/fa6-solid": "1.2.3",
     "@js-temporal/polyfill": "0.5.1",
     "@tailwindcss/vite": "4.1.10",
     "astro": "5.9.4",

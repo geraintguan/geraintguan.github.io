@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+import clsx from "clsx";
+
+interface Props {
+  class?: string;
+  href?: string;
+  icon?: string;
+}
+
+const { class: className, href = "/#", icon } = Astro.props;
+---
+
+<a
+  class={clsx("text-5xl text-solarized-base01 hover:text-black", className)}
+  href={href}
+  target="_blank"
+>
+  <Icon name={icon} />
+</a>
