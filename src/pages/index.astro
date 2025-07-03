@@ -8,7 +8,7 @@ import { Image } from "astro:assets";
 import clsx from "clsx";
 import Divider from "src/components/Divider.astro";
 import ExperienceCard from "src/components/ExperienceCard.astro";
-import IconLink from "src/components/IconLink.astro";
+import IconCardLink from "src/components/IconCardLink.astro";
 
 const images = {
   companies: {
@@ -45,19 +45,23 @@ const images = {
       </div>
       <p class="px-12 text-center text-2xl md:px-24">
         I build software end-to-end from 0 → 1 and scale them beyond minimum
-        viable products.
-        <div class="m-auto mt-4 flex flex-row gap-4">
-          <IconLink
+        viable products with over 8 years of experience hands-on and leadership
+        experience in fast-paced startup, scaleup, and agency environments.
+        <div class="m-auto mt-4 flex flex-row flex-wrap gap-4">
+          <IconCardLink
             href="https://www.linkedin.com/in/geraintguan/"
             icon="fa6-brands:linkedin"
+            label="LinkedIn"
           />
-          <IconLink
+          <IconCardLink
             href="https://github.com/geraintguan"
             icon="fa6-brands:github-square"
+            label="GitHub"
           />
-          <IconLink
-            href="mailto:hello@geraint.cloud"
+          <IconCardLink
+            href="mailto:mail@geraint.io"
             icon="fa6-solid:square-envelope"
+            label="Email"
           />
         </div>
       </p>

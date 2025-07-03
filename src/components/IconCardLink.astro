@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  class?: string;
+  href?: string;
+  icon?: string;
+  label?: string;
+}
+
+const { href = "/#", icon, label } = Astro.props;
+---
+
+<a
+  class="flex cursor-pointer flex-row gap-2 rounded-lg border border-solarized-base1 p-4 shadow-md hover:bg-solarized-base2 md:flex-row dark:border-solarized-base02 dark:hover:bg-solarized-base01"
+  href={href}
+  target="_blank"
+>
+  <Icon class="my-auto text-3xl" name={icon} />
+  <span class="my-auto text-sm">
+    {label ?? href}
+  </span>
+</a>
