@@ -20,21 +20,7 @@ import { Icon } from "astro-icon/components";
 </button>
 
 <script>
-  import { theme } from "@stores/ThemeStore";
+  import ThemeStore from "@stores/ThemeStore";
 
-  const button = document.getElementById("theme-toggle-button");
-
-  if (!button) {
-    throw new Error("Could not find button with id 'theme-toggle-button'");
-  }
-
-  button.addEventListener("click", () => {
-    const currentTheme = theme.get();
-
-    if (currentTheme === "dark") {
-      theme.set("light");
-    } else {
-      theme.set("dark");
-    }
-  });
+  ThemeStore.registerToggleButtonById("theme-toggle-button");
 </script>

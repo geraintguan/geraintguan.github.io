@@ -22,7 +22,7 @@ import ThemeToggle from "src/components/ThemeToggle.astro";
 </html>
 
 <script>
-  import * as ThemeStore from "@stores/ThemeStore";
+  import ThemeStore from "@stores/ThemeStore";
 
-  ThemeStore.init();
+  ThemeStore.registerSubscription();
 </script>
