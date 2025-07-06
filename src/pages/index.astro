@@ -9,6 +9,7 @@ import clsx from "clsx";
 import Divider from "src/components/Divider.astro";
 import ExperienceCard from "src/components/ExperienceCard.astro";
 import IconCardLink from "src/components/IconCardLink.astro";
+import Tag from "src/components/Tag.astro";
 
 const images = {
   companies: {
@@ -47,24 +48,65 @@ const images = {
         I build software end-to-end from 0 → 1 and scale them beyond minimum
         viable products with over 8 years of experience hands-on and leadership
         experience in fast-paced startup, scaleup, and agency environments.
-        <div class="m-auto mt-4 flex flex-row flex-wrap gap-4">
-          <IconCardLink
-            href="https://www.linkedin.com/in/geraintguan/"
-            icon="fa6-brands:linkedin"
-            label="LinkedIn"
-          />
-          <IconCardLink
-            href="https://github.com/geraintguan"
-            icon="fa6-brands:github-square"
-            label="GitHub"
-          />
-          <IconCardLink
-            href="mailto:mail@geraint.io"
-            icon="fa6-solid:square-envelope"
-            label="Email"
-          />
-        </div>
       </p>
+      <p class="mt-2 px-12 text-center text-2xl md:px-24">
+        I'm always happy to chat about building products, technology, and
+        startups! Drop me a line on any of the platforms below if you'd like to
+        connect.
+      </p>
+      <div class="m-auto mt-4 flex flex-row flex-wrap gap-4">
+        <IconCardLink
+          href="https://www.linkedin.com/in/geraintguan/"
+          icon="fa6-brands:linkedin"
+          label="LinkedIn"
+        />
+        <IconCardLink
+          href="https://github.com/geraintguan"
+          icon="fa6-brands:github-square"
+          label="GitHub"
+        />
+        <IconCardLink
+          href="mailto:mail@geraint.io"
+          icon="fa6-solid:square-envelope"
+          label="Email"
+        />
+      </div>
+      <div class="mt-4 flex flex-col gap-4">
+        <div class="mx-auto flex flex-col gap-4">
+          <h1 class="mx-auto">Tech Stack</h1>
+          <Divider color="green" />
+        </div>
+        <p class="px-12 text-center text-2xl md:px-24">
+          Technologies that I ❤️ to build with.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {
+            [
+              "Astro",
+              "AWS",
+              "Dev Containers",
+              "Docker",
+              "DynamoDB",
+              "Expo",
+              "Fastify",
+              "GitHub Actions",
+              "GitHub",
+              "MongoDB",
+              "Node.js",
+              "PostgreSQL",
+              "React Native",
+              "React",
+              "tRPC",
+              "TypeScript",
+              "Vite",
+              "Vitest",
+              "VS Code",
+            ].map((tag) => {
+              return <Tag label={tag} />;
+            })
+          }
+        </div>
+      </div>
       <div class="mt-4 flex flex-col gap-12">
         <div class="mx-auto flex flex-col gap-4">
           <h1 class="mx-auto">Experience</h1>

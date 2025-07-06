@@ -10,7 +10,10 @@
         "panel": "shared",
         "showReuseMessage": false
       },
-      "problemMatcher": []
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
     }
   ]
 }
