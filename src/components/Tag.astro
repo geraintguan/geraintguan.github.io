@@ -1,5 +1,6 @@
 ---
 import angularjsLogo from "@images/angularjs-logo.png";
+import astroLogo from "@images/astro-logo.svg";
 import awsLogo from "@images/aws-logo.png";
 import azureDevOpsLogo from "@images/azure-devops-logo.png";
 import azureLogo from "@images/azure-logo.png";
@@ -31,6 +32,7 @@ const { label } = Astro.props;
 const backgrounds: Record<string, string> = {
   ".net": clsx("bg-[#512BD4]"),
   angularjs: clsx("bg-[#C44638]"),
+  astro: clsx("bg-[#0E0F14]"),
   aws: clsx("bg-[#FF9900]"),
   azure: clsx("bg-[#0960AE]"),
   "azure devops": clsx("bg-[#0E7ED8]"),
@@ -58,6 +60,7 @@ const backgrounds: Record<string, string> = {
 const borders: Record<string, string> = {
   ".net": clsx("border border-[#512BD4]"),
   angularjs: clsx("border border-[#C44638]"),
+  astro: clsx("border border-[#0E0F14]"),
   aws: clsx("border border-[#FF9900]"),
   azure: clsx("border border-[#0960AE]"),
   "azure devops": clsx("border border-[#0E7ED8]"),
@@ -108,6 +111,19 @@ const text = texts[labelKey] ?? texts.default;
           height={16}
           src={angularjsLogo}
           width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "astro" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Astro Logo"
+          class="m-auto"
+          height={14}
+          src={astroLogo}
+          width={14}
         />
       </div>
     )
