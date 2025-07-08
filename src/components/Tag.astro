@@ -6,6 +6,7 @@ import azureDevOpsLogo from "@images/azure-devops-logo.png";
 import azureLogo from "@images/azure-logo.png";
 import codeshipLogo from "@images/codeship-logo.png";
 import csharpLogo from "@images/csharp-logo.png";
+import deelopmentContainersLogo from "@images/development-containers-logo.png";
 import dockerLogo from "@images/docker-logo.png";
 import dotNetLogo from "@images/dotnet-logo.png";
 import expoLogo from "@images/expo-logo.png";
@@ -40,6 +41,7 @@ const backgrounds: Record<string, string> = {
   "c#": clsx("bg-[#7659DE]"),
   codeship: clsx("bg-[#004466]"),
   default: clsx("bg-solarized-base01"),
+  "development containers": clsx("bg-[#3252DB]"),
   docker: clsx("bg-[#1D63ED]"),
   expo: clsx("bg-[#111113]"),
   fastify: clsx("bg-[#1B1B1D]"),
@@ -68,6 +70,7 @@ const borders: Record<string, string> = {
   "c#": clsx("border border-[#7659DE]"),
   codeship: clsx("border border-[#004466]"),
   default: clsx("border border-solarized-base01"),
+  "development containers": clsx("border border-[#3252DB]"),
   docker: clsx("border border-[#1D63ED]"),
   expo: clsx("border border-[#111113]"),
   fastify: clsx("border border-[#1B1B1D]"),
@@ -188,6 +191,19 @@ const text = texts[labelKey] ?? texts.default;
           class="m-auto"
           height={16}
           src={codeshipLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "development containers" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Development Container Logo"
+          class="m-auto"
+          height={16}
+          src={deelopmentContainersLogo}
           width={16}
         />
       </div>
