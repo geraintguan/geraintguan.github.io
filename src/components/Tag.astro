@@ -20,6 +20,7 @@ import mssqlLogo from "@images/mssql-logo.png";
 import nodejsLogo from "@images/nodejs-logo.png";
 import phpLogo from "@images/php-logo.png";
 import reactLogo from "@images/react-logo.svg";
+import redisLogo from "@images/redis-logo.svg";
 import trpcLogo from "@images/trpc-logo.svg";
 import typescriptLogo from "@images/typescript-logo.png";
 import viteLogo from "@images/vite-logo.png";
@@ -58,6 +59,7 @@ const backgrounds: Record<string, string> = {
   php: clsx("bg-[#8387BC]"),
   react: clsx("bg-[#75C2D9]"),
   "react native": clsx("bg-[#75C2D9]"),
+  redis: clsx("bg-[#B63D34]"),
   trpc: clsx("bg-[#477CB4]"),
   typescript: clsx("bg-[#4377C1]"),
   vite: clsx("bg-[#D69FFA]"),
@@ -89,6 +91,7 @@ const borders: Record<string, string> = {
   php: clsx("border border-[#8387BC]"),
   react: clsx("border border-[#75C2D9]"),
   "react native": clsx("border border-[#75C2D9]"),
+  redis: clsx("border border-[#B63D34]"),
   trpc: clsx("border border-[#477CB4]"),
   typescript: clsx("border border-[#4377C1]"),
   vite: clsx("border border-[#D69FFA]"),
@@ -379,6 +382,19 @@ const text = texts[labelKey] ?? texts.default;
           class="m-auto"
           height={16}
           src={reactLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "redis" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Redis Logo"
+          class="m-auto"
+          height={16}
+          src={redisLogo}
           width={16}
         />
       </div>
