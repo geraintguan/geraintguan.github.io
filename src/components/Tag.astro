@@ -7,6 +7,7 @@ import azureLogo from "@images/azure-logo.png";
 import codeshipLogo from "@images/codeship-logo.png";
 import csharpLogo from "@images/csharp-logo.png";
 import deelopmentContainersLogo from "@images/development-containers-logo.png";
+import digitalOceanLogo from "@images/digitalocean-logo.png";
 import dockerLogo from "@images/docker-logo.png";
 import dotNetLogo from "@images/dotnet-logo.png";
 import dynamodbLogo from "@images/dynamodb-logo.png";
@@ -45,6 +46,7 @@ const backgrounds: Record<string, string> = {
   codeship: clsx("bg-[#004466]"),
   default: clsx("bg-solarized-base01"),
   "development containers": clsx("bg-[#3252DB]"),
+  "digital ocean": clsx("bg-[#2C67F6]"),
   docker: clsx("bg-[#1D63ED]"),
   dynamodb: clsx("bg-[#3A70B5]"),
   expo: clsx("bg-[#111113]"),
@@ -77,6 +79,7 @@ const borders: Record<string, string> = {
   codeship: clsx("border border-[#004466]"),
   default: clsx("border border-solarized-base01"),
   "development containers": clsx("border border-[#3252DB]"),
+  "digital ocean": clsx("border border-[#2C67F6]"),
   docker: clsx("border border-[#1D63ED]"),
   dynamodb: clsx("border border-[#3A70B5]"),
   expo: clsx("border border-[#111113]"),
@@ -213,6 +216,19 @@ const text = texts[labelKey] ?? texts.default;
           class="m-auto"
           height={16}
           src={deelopmentContainersLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "digital ocean" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Digital Ocean Logo"
+          class="m-auto"
+          height={16}
+          src={digitalOceanLogo}
           width={16}
         />
       </div>
