@@ -20,6 +20,7 @@ import mongodbLogo from "@images/mongodb-logo.svg";
 import mssqlLogo from "@images/mssql-logo.png";
 import nodejsLogo from "@images/nodejs-logo.png";
 import phpLogo from "@images/php-logo.png";
+import postgresqlLogo from "@images/postgresql-logo.png";
 import reactLogo from "@images/react-logo.svg";
 import redisLogo from "@images/redis-logo.svg";
 import trpcLogo from "@images/trpc-logo.svg";
@@ -59,6 +60,7 @@ const backgrounds: Record<string, string> = {
   mssql: clsx("bg-[#B92224]"),
   "node.js": clsx("bg-[#8CC84B]"),
   php: clsx("bg-[#8387BC]"),
+  postgresql: clsx("bg-[#3E668F]"),
   react: clsx("bg-[#75C2D9]"),
   "react native": clsx("bg-[#75C2D9]"),
   redis: clsx("bg-[#B63D34]"),
@@ -92,6 +94,7 @@ const borders: Record<string, string> = {
   mssql: clsx("border border-[#B92224]"),
   "node.js": clsx("border border-[#8CC84B]"),
   php: clsx("border border-[#8387BC]"),
+  postgresql: clsx("border border-[#3E668F]"),
   react: clsx("border border-[#75C2D9]"),
   "react native": clsx("border border-[#75C2D9]"),
   redis: clsx("border border-[#B63D34]"),
@@ -372,6 +375,19 @@ const text = texts[labelKey] ?? texts.default;
           class="m-auto"
           height={16}
           src={nodejsLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "postgresql" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="PostgreSQL Logo"
+          class="m-auto"
+          height={16}
+          src={postgresqlLogo}
           width={16}
         />
       </div>
