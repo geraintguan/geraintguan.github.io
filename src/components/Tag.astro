@@ -22,6 +22,7 @@ import phpLogo from "@images/php-logo.png";
 import reactLogo from "@images/react-logo.svg";
 import trpcLogo from "@images/trpc-logo.svg";
 import typescriptLogo from "@images/typescript-logo.png";
+import viteLogo from "@images/vite-logo.png";
 import { Image } from "astro:assets";
 import clsx from "clsx";
 
@@ -59,6 +60,7 @@ const backgrounds: Record<string, string> = {
   "react native": clsx("bg-[#75C2D9]"),
   trpc: clsx("bg-[#477CB4]"),
   typescript: clsx("bg-[#4377C1]"),
+  vite: clsx("bg-[#D69FFA]"),
 };
 
 const borders: Record<string, string> = {
@@ -89,6 +91,7 @@ const borders: Record<string, string> = {
   "react native": clsx("border border-[#75C2D9]"),
   trpc: clsx("border border-[#477CB4]"),
   typescript: clsx("border border-[#4377C1]"),
+  vite: clsx("border border-[#D69FFA]"),
 };
 
 const texts: Record<string, string> = {
@@ -402,6 +405,19 @@ const text = texts[labelKey] ?? texts.default;
           class="m-auto"
           height={16}
           src={typescriptLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "vite" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="Vite Logo"
+          class="m-auto"
+          height={16}
+          src={viteLogo}
           width={16}
         />
       </div>
