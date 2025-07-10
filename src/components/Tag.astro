@@ -27,6 +27,7 @@ import trpcLogo from "@images/trpc-logo.svg";
 import typescriptLogo from "@images/typescript-logo.png";
 import viteLogo from "@images/vite-logo.png";
 import vitestLogo from "@images/vitest-logo.svg";
+import vscodeLogo from "@images/vscode-logo.png";
 import { Image } from "astro:assets";
 import clsx from "clsx";
 
@@ -69,6 +70,7 @@ const backgrounds: Record<string, string> = {
   typescript: clsx("bg-[#4377C1]"),
   vite: clsx("bg-[#D69FFA]"),
   vitest: clsx("bg-[#7B9A36]"),
+  "vs code": clsx("bg-[#50A6EC]"),
 };
 
 const borders: Record<string, string> = {
@@ -104,6 +106,7 @@ const borders: Record<string, string> = {
   typescript: clsx("border border-[#4377C1]"),
   vite: clsx("border border-[#D69FFA]"),
   vitest: clsx("border border-[#7B9A36]"),
+  "vs code": clsx("border border-[#50A6EC]"),
 };
 
 const texts: Record<string, string> = {
@@ -482,6 +485,19 @@ const text = texts[labelKey] ?? texts.default;
           class="m-auto"
           height={16}
           src={vitestLogo}
+          width={16}
+        />
+      </div>
+    )
+  }
+  {
+    labelKey === "vs code" && (
+      <div class="flex h-full w-fit rounded-r-full bg-white px-2 py-1">
+        <Image
+          alt="VS Code Logo"
+          class="m-auto"
+          height={16}
+          src={vscodeLogo}
           width={16}
         />
       </div>
