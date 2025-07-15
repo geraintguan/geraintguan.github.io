@@ -1,6 +1,7 @@
 ---
 import AppointeddLogo from "@images/appointedd-logo.svg";
 import ClearSkyLogicLogo from "@images/clearskylogic-logo.jpg";
+import CodebarLogo from "@images/codebar-logo.png";
 import profileImage from "@images/profile.jpg";
 import { Temporal } from "@js-temporal/polyfill";
 import DefaultLayout from "@layouts/DefaultLayout.astro";
@@ -25,6 +26,12 @@ const images = {
       height: 80,
       src: ClearSkyLogicLogo,
       width: 80,
+    },
+    codebar: {
+      alt: "Codebar Logo",
+      height: 80,
+      src: CodebarLogo,
+      width: 220,
     },
   },
 };
@@ -371,6 +378,31 @@ const images = {
               </ul>
             </div>
           </div>
+        </ExperienceCard>
+      </div>
+      <div class="mt-4 flex flex-col gap-8">
+        <div class="mx-auto flex flex-col gap-4">
+          <h1 class="mx-auto">Extracurricular</h1>
+          <Divider color="violet" />
+          <p class="px-12 text-center text-2xl md:px-24">
+            Other things I do. 🤹
+          </p>
+        </div>
+        <ExperienceCard
+          company={{
+            name: "codebar",
+            url: "https://codebar.io",
+          }}
+          image={images.companies.codebar}
+          start={Temporal.PlainDate.from("2024-01-01")}
+          tags={[]}
+          title="Volunteer Coach"
+        >
+          <p>
+            I regularly volunteer as a coach at the Edinburgh chapter. Codebar
+            is a charity that facilitates the growth of a diverse tech community
+            by running free programming workshops for minority groups in tech.
+          </p>
         </ExperienceCard>
       </div>
     </div>
