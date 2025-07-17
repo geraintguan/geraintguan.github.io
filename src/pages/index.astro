@@ -2,7 +2,8 @@
 import AppointeddLogo from "@images/appointedd-logo.svg";
 import ClearSkyLogicLogo from "@images/clearskylogic-logo.jpg";
 import CodebarLogo from "@images/codebar-logo.png";
-import profileImage from "@images/profile.jpg";
+import ProfileImage from "@images/profile.jpg";
+import UniversityOfStAndrewsLogo from "@images/university-of-st-andrews-logo.png";
 import { Temporal } from "@js-temporal/polyfill";
 import DefaultLayout from "@layouts/DefaultLayout.astro";
 import { Image } from "astro:assets";
@@ -33,6 +34,12 @@ const images = {
       src: CodebarLogo,
       width: 220,
     },
+    universityOfStAndrews: {
+      alt: "University of St. Andrews Logo",
+      height: 60,
+      src: UniversityOfStAndrewsLogo,
+      width: 60,
+    },
   },
 };
 ---
@@ -43,7 +50,7 @@ const images = {
       alt="Profile Image"
       class="mx-auto rounded-full border-8 border-solarized-base2 shadow-2xl dark:border-solarized-base02"
       height={200}
-      src={profileImage}
+      src={ProfileImage}
       width={200}
     />
     <div class="flex flex-col gap-4">
@@ -52,9 +59,9 @@ const images = {
         <Divider color="red" />
       </div>
       <p class="px-12 text-center text-2xl md:px-24">
-        🧑‍💻 Mission driven end-to-end 0 → 1 product builder with 8+ years
-        experience building and scaling products in startup, scaleup, and agency
-        environments.
+        <a href="https://www.geraint.io">Personal Website</a>
+        🧑‍💻 Mission driven end-to-end 0 → 1 product builder with 8+ years experience
+        building and scaling products in startup, scaleup, and agency environments.
       </p>
       <p class="mt-2 px-12 text-center text-2xl md:px-24">
         I'm always happy to chat about building products, technology, and
@@ -382,6 +389,35 @@ const images = {
       </div>
       <div class="mt-4 flex flex-col gap-8">
         <div class="mx-auto flex flex-col gap-4">
+          <h1 class="mx-auto">Education</h1>
+          <Divider color="cyan" />
+          <p class="px-12 text-center text-2xl md:px-24">
+            Where I've studied. 🧑‍🏫
+          </p>
+        </div>
+        <ExperienceCard
+          company={{
+            name: "University of St. Andrews",
+            url: "https://www.st-andrews.ac.uk/computer-science/",
+          }}
+          end={Temporal.PlainDate.from("2016-09-01")}
+          image={images.companies.universityOfStAndrews}
+          start={Temporal.PlainDate.from("2012-09-01")}
+          title="Computer Science"
+        >
+          <div>
+            <b>Notable Modules</b>
+            <ul class="list-disc pl-8">
+              <li>Artificial Intelligence</li>
+              <li>Human-Computer Interaction</li>
+              <li>Formal Verification</li>
+              <li>Discrete Mathematics</li>
+            </ul>
+          </div>
+        </ExperienceCard>
+      </div>
+      <div class="mt-4 flex flex-col gap-8">
+        <div class="mx-auto flex flex-col gap-4">
           <h1 class="mx-auto">Extracurricular</h1>
           <Divider color="violet" />
           <p class="px-12 text-center text-2xl md:px-24">
@@ -395,7 +431,6 @@ const images = {
           }}
           image={images.companies.codebar}
           start={Temporal.PlainDate.from("2024-01-01")}
-          tags={[]}
           title="Volunteer Coach"
         >
           <p>
